@@ -3,8 +3,8 @@
 # 함수 정의
 def change(word) :
     for i in range(len(word)):
-        a = str(list(word[i])[0]).upper()              # 첫글자 대문자
-        b = str("".join(list(word[i])[1: ])).lower()    # 나머지 글자 소문자
+        a = str(word[i][0]).upper()              # 첫글자 대문자
+        b = str("".join(word[i][1: ])).lower()    # 나머지 글자 소문자
         word[i] = a+b
         
     print("\n다음으로 변환 되었습니다.\n------------>>\t", " ".join(word))
