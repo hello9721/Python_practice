@@ -1,6 +1,6 @@
-# URL을 받아 도메인 추출하기
+# Q. URL을 받아 도메인 추출하기
 
-# 함수 정의
+    # 함수 정의
 
 def crawling(url):
     try:
