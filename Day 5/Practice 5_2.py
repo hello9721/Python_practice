@@ -37,7 +37,7 @@ s= "/PS:121"
 print(get_PS(s))
 
 
-# PZ의 값만을 반환하는 함수 
+# Q. PZ의 값만을 반환하는 함수 
 
 def get_PZ(s):
     s_sp = s.split(":")
