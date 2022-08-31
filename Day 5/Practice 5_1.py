@@ -8,15 +8,18 @@ def crawling(url):
 
         web = url_sp[2]
         content = url_sp[3]
+
+        if url.find("://") == -1:   # URL이 아닐 때를 대비
+            return f"[ {url} ] 은 URL이 아닙니다. 다시 입력해주세요.\n"
         
-        if "=" in content:      # 컨텐츠명이 존재하지 않는 주소일 때를 대비
+        if "=" in content:         # 컨텐츠명이 존재하지 않는 주소일 때를 대비
             content = "-"
         elif len(content) <= 2:
             content = "-"
         
         answer = f"SiteName :\t{web}\n ContentName :\t{content}"
         
-    except IndexError:        # 컨텐츠명이 존재하지 않아 인덱스 초과 오류가 났을때를 대비
+    except IndexError:           # 컨텐츠명이 존재하지 않아 인덱스 초과 오류가 났을때를 대비
         answer = f"[ {url} ] 은 추출할 수 없습니다. 다시 입력해주세요.\n"
         
     return answer
