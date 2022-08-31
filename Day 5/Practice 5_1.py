@@ -2,7 +2,7 @@
 
 # 함수 정의
 
-def crolling(url):
+def crawling(url):
     try:
         url_sp = url.split("/")
 
@@ -26,7 +26,7 @@ while 1:
     # URL 받아와서 함수 적용    
     url = input(f" 원하는 URL를 등록해주세요.\n\t: ")
     
-    print("\n", crolling(url), "\n")
+    print("\n", crawling(url), "\n")
 
     # 다시 입력을 원할 경우와 원하지 않을경우    
     new = input(f" 다시하시겠습니까? ( Y / N )\n\t: ")
