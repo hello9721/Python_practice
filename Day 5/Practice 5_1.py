@@ -19,7 +19,7 @@ def crawling(url):
         
         answer = f"SiteName :\t{web}\n ContentName :\t{content}"
         
-    except IndexError:           # 컨텐츠명이 존재하지 않아 인덱스 초과 오류가 났을때를 대비
+    except IndexError:           # 인덱스 초과 오류가 났을때를 대비
         answer = f"[ {url} ] 은 추출할 수 없습니다. 다시 입력해주세요.\n"
         
     return answer
