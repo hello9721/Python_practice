@@ -24,3 +24,26 @@ print(f"{file[0]} = {file[1]}\n{ps[0]} = {ps[1]}\n{pz[ :2]}.X = {pz_sp[0]}\n{pz[
 # "\r" CR(커서를 맨 앞으로 되돌리기) / "\n" LF(종이를 한 칸 올리기)
 # c:\user\temp\test.py => \u로 인해 오류 / \t는 탭으로 인식
 # \ -> / 로 해주거나 \\ 사용하기
+
+
+# Q. PS의 값만을 반환하는 함수 
+
+def get_PS(s):
+    s_sp = s.split(":")
+    return s_sp[1]
+
+s= "/PS:121"
+
+print(get_PS(s))
+
+
+# PZ의 값만을 반환하는 함수 
+
+def get_PZ(s):
+    s_sp = s.split(":")
+    s_list = s_sp[1].split(",")
+    return s_list
+
+s= "/PZ:2,3,100,100"
+
+print("x =", get_PZ(s)[0], ", y =", get_PZ(s)[1], ", w =", get_PZ(s)[2], ", h =", get_PZ(s)[3])
