@@ -39,4 +39,5 @@ while 1:
         continue
     else:
         # Y나 N 이외의 문자를 입력할 경우
-        print(" 오류로 인해 종료합니다.")
+        print("\n 오류로 인해 종료합니다.")
+        break
