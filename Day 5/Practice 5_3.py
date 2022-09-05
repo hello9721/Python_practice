@@ -17,13 +17,25 @@ def get_FILE(s):
     x = s.split("=")
     return x[1]
 
+# 구조적으로 비슷한 get_PS()와 get_FILE() 통합
+# /xx(구분자)value => xx에 따라 서로 다른 구분자를 받아와 value 추출
+
+def get_Value(s):
+    if s[ :2] == "PS":
+        a = ":"
+    elif s[ :2] == "FI":
+        a = "="
+    
+    x = s.split(a)
+    return x[1]
+    
 # 메인 루틴 1
 
 def Main1(s):
     try:        
-        ps = get_PS(s[s.find("PS"): ].split("/")[0])
+        ps = get_Value(s[s.find("PS"): ].split("/")[0])
         pz_ = get_PZ(s[s.find("PZ"): ].split("/")[0])
-        file  = get_FILE(s[s.find("FILE"): ].split("/")[0])
+        file  = get_Value(s[s.find("FILE"): ].split("/")[0])
         pz = []
 
         ps = ps.strip()
@@ -47,11 +59,11 @@ def Main2(s):
         for i in s_sp:
             i = i.strip()
             if i[ :2] == "PS":
-                ps = get_PS(i)
+                ps = get_Value(i)
             elif i[ :2] == "PZ":
                 pz = get_PZ(i)
             elif i[ :2] == "FI":
-                file = get_FILE(i)
+                file = get_Value(i)
                 
         print(f"PS = {ps} | PZ = [ x = {pz[0]}, y = {pz[1]}, w = {pz[2]}, h = {pz[3]} ] | FILE = {file}")
 
