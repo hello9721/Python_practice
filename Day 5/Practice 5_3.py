@@ -1,12 +1,8 @@
-# s = "PS:121"
-
 # PS의 값만을 반환하는 함수 
 
 def get_PS(s):
     x = s.split(":")
     return x[1]
-
-# s = "PZ:2,3,100,100"
 
 # PZ의 값만을 반환하는 함수 
 
@@ -14,8 +10,6 @@ def get_PZ(s):
     s_sp = s.split(":")
     s_list = s_sp[1].split(",")
     return s_list
-
-# s = "FILE = test.py"
 
 # FILE의 값만을 반환하는 함수 
 
