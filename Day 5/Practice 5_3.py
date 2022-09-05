@@ -18,7 +18,9 @@ def get_FILE(s):
     return x[1]
 
 # 구조적으로 비슷한 get_PS(s)와 get_FILE(s) 통합
-# /xx(구분자)value => xx에 따라 설정된 서로 다른 구분자를 통해  value 추출
+# /xx(sep)value => xx에 따라 설정된 서로 다른 구분자를 통해 Value 추출
+
+# 1
 
 def get_Value(s):
     if s[ :2] == "PS":
@@ -28,7 +30,13 @@ def get_Value(s):
     
     x = s.split(a)
     return x[1]
-    
+
+# 2
+
+def getOptionValue(s, d):
+    x = s.split(d)
+    return x[1]
+  
 # 메인 루틴 1
 
 def Main1(s):
@@ -59,11 +67,11 @@ def Main2(s):
         for i in s_sp:
             i = i.strip()
             if i[ :2] == "PS":
-                ps = get_Value(i)
+                ps = getOptionValue(i, ":")
             elif i[ :2] == "PZ":
                 pz = get_PZ(i)
             elif i[ :2] == "FI":
-                file = get_Value(i)
+                file = getOptionValue(i, "=")
                 
         print(f"PS = {ps} | PZ = [ x = {pz[0]}, y = {pz[1]}, w = {pz[2]}, h = {pz[3]} ] | FILE = {file}")
 
