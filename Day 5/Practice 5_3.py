@@ -17,8 +17,8 @@ def get_FILE(s):
     x = s.split("=")
     return x[1]
 
-# 구조적으로 비슷한 get_PS()와 get_FILE() 통합
-# /xx(구분자)value => xx에 따라 서로 다른 구분자를 받아와 value 추출
+# 구조적으로 비슷한 get_PS(s)와 get_FILE(s) 통합
+# /xx(구분자)value => xx에 따라 설정된 서로 다른 구분자를 통해  value 추출
 
 def get_Value(s):
     if s[ :2] == "PS":
