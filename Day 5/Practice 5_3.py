@@ -46,7 +46,7 @@ def Main(s):
     pz = get_PZ(s_li[2])
     file  = get_FILE(s_li[3])
     
-    print(f"PS = {ps} / PZ [ x = {pz[0]}, y = {pz[1]}, w = {pz[2]}, h = {pz[3]} ] / FILE = {file}")
+    print(f"PS = {ps} | PZ = [ x = {pz[0]}, y = {pz[1]}, w = {pz[2]}, h = {pz[3]} ] | FILE = {file}")
 
 str = "/PS:121 /PZ:2,3,100,100 /FILE=test.py"
 
