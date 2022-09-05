@@ -20,10 +20,18 @@ def get_FILE(s):
 # 메인 루틴 1
 
 def Main1(s):
-    try:
+    try:        
         ps = get_PS(s[s.find("PS"): ].split("/")[0])
-        pz = get_PZ(s[s.find("PZ"): ].split("/")[0])
+        pz_ = get_PZ(s[s.find("PZ"): ].split("/")[0])
         file  = get_FILE(s[s.find("FILE"): ].split("/")[0])
+        pz = []
+
+        ps = ps.strip()
+        file = file.strip()
+        
+        for i in pz_:
+            i = i.strip()
+            pz.append(i)
 
         print(f"PS = {ps} | PZ = [ x = {pz[0]}, y = {pz[1]}, w = {pz[2]}, h = {pz[3]} ] | FILE = {file}")
 
@@ -37,6 +45,7 @@ def Main2(s):
         s_sp = s.split("/")
         
         for i in s_sp:
+            i = i.strip()
             if i[ :2] == "PS":
                 ps = get_PS(i)
             elif i[ :2] == "PZ":
