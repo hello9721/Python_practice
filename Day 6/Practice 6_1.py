@@ -3,8 +3,8 @@
 def count_lst(b):
     c = {}
     for i in b:
-       c[i] = c.get(i, 0) +1              # get = i가 c에 있다면  c[i]의 값을 가져오고 없다면 0
-                                
+       c[i] = c.get(i, 0) +1
+    # get = i가 c에 있다면  c[i]의 값을 가져오고 없다면 0
     return c   
 
     # dictionary 를 이용하여 특정 구문의 단어 구성과 빈도수 분석하기
@@ -13,7 +13,7 @@ def count_lst(b):
 
     # 특수문자와 공백을 원하는 구분자로 대치해주는 함수
 
-def toBlank(p, s):
+def toSep(p, s):
     
     str_punc = " ~!@#$%^&*()_+`-={}:\"<>?[];',./\\|"
 
@@ -39,9 +39,9 @@ def setAndSort(w):
 def Main():
     
     phrase = input().split(".")         # input으로 문자열 받기
-    phrase = toBlank(phrase, "*")
+    phrase = toSep(phrase, "*")
 
-   word = []                            # 문장들 "*" 기준 split
+   word = []                                    # 문장들 "*" 기준 split
 
     for j in phrase:
         temp = j.split("*")
@@ -51,15 +51,15 @@ def Main():
             if i != " " and i != "":
                 word.append(i)
 
-    dict = {}                           # get 함수로 빈도수를 측정 & dict에 할당
+    dict = {}                                    # get 함수로 빈도수를 측정 & dict에 할당
 
     for i in word:
         dict[i] = dict.get(i,0) +1
 
     word = setAndSort(word)
 
-    for i in word:                      # 포맷 지정 출력
+    for i in word:                           # 포맷 지정 출력
         print(f"{i} ____ {dict[i]}")
 
 
-Main()                                  # 실행
+Main()                                          # 실행
