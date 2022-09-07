@@ -1,6 +1,6 @@
 # file = open("test.txt")
 # for i in file:                          # 줄 단위로 읽음
-#    print(f"[{i.strip()}]")      # \n 없애기
+#    print(f"[{i.strip()}]")              # \n 없애기
 
     # UnicodeDecodeError: 'cp949' codec can't decode byte 0xe2 in position 548: illegal multibyte sequence
     # 텍스트 파일의 인코딩을 ANSI로 저장
@@ -35,19 +35,19 @@ def setAndSort(w):
 
 def Main():
     file = open("test4.txt")              # Current Directory == 현재 편집중인 파일이 저장되어있는 장소
-                                                      # 텍스트 파일을 열어 적용
+                                          # 텍스트 파일을 열어 적용
     phrase = []
     
     for i in file:
-        phrase.append(toSep(i, "*"))# 문장 하나하나 가져와서 toSep에 넣기
+        phrase.append(toSep(i, "*"))      # 문장 하나하나 가져와서 toSep에 넣기
 
     word = []                  
 
     for j in phrase:
-        temp = j.split("*")                 # 문장들 "*" 기준 split
+        temp = j.split("*")               # 문장들 "*" 기준 split
         for i in temp:
             i = i.upper()
-            if i != "":                            # 빈 요소들 제거
+            if i != "":                   # 빈 요소들 제거
                 word.append(i)
 
     dict = {}                             
@@ -58,9 +58,9 @@ def Main():
     word = setAndSort(word)
 
     for i in word:                        
-        print(f"{i} ____ {dict[i]}")   # 포맷 지정 출력
+        print(f"{i} ____ {dict[i]}")    # 포맷 지정 출력
 
 
-Main()                                          # 실행
+Main()                                  # 실행
 
 
