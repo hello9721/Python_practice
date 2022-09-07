@@ -41,7 +41,7 @@ def Main():
     phrase = input().split(".")         # input으로 문자열 받기
     phrase = toSep(phrase, "*")
 
-   word = []                            # 문장들 "*" 기준 split
+    word = []                           # 문장들 "*" 기준 split
 
     for j in phrase:
         temp = j.split("*")
