@@ -1,5 +1,5 @@
 # file = open("test.txt")
-# for i in file:                          # 줄 단위로 읽음
+# for i in file:                  # 줄 단위로 읽음
 #    print(f"[{i.strip()}]")      # \n 없애기
 
     # UnicodeDecodeError: 'cp949' codec can't decode byte 0xe2 in position 548: illegal multibyte sequence
