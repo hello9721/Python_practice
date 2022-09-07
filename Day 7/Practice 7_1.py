@@ -34,7 +34,7 @@ def setAndSort(w):
 
 def Main():
     file = open("test2.txt")              # Current Directory == 현재 편집중인 파일이 저장되어있는 장소
-                                                      # 텍스트 파일을 열어 적용
+                                          # 텍스트 파일을 열어 적용
     phrase = []
     
     for i in file:
@@ -43,10 +43,10 @@ def Main():
     word = []                  
 
     for j in phrase:
-        temp = j.split("*")                 # 문장들 "*" 기준 split
+        temp = j.split("*")               # 문장들 "*" 기준 split
         for i in temp:
             i = i.upper()
-            if i != "":                            # 빈 요소들 제거
+            if i != "":                   # 빈 요소들 제거
                 word.append(i)
 
     dict = {}                             
@@ -57,9 +57,9 @@ def Main():
     word = setAndSort(word)
 
     for i in word:                        
-        print(f"{i} ____ {dict[i]}")   # 포맷 지정 출력
+        print(f"{i} ____ {dict[i]}")     # 포맷 지정 출력
 
 
-Main()                                          # 실행
+Main()                                   # 실행
 
 
