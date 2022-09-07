@@ -41,7 +41,7 @@ def Main():
     phrase = input().split(".")         # input으로 문자열 받기
     phrase = toSep(phrase, "*")
 
-   word = []                                    # 문장들 "*" 기준 split
+   word = []                            # 문장들 "*" 기준 split
 
     for j in phrase:
         temp = j.split("*")
@@ -51,15 +51,15 @@ def Main():
             if i != " " and i != "":
                 word.append(i)
 
-    dict = {}                                    # get 함수로 빈도수를 측정 & dict에 할당
+    dict = {}                           # get 함수로 빈도수를 측정 & dict에 할당
 
     for i in word:
         dict[i] = dict.get(i,0) +1
 
     word = setAndSort(word)
 
-    for i in word:                           # 포맷 지정 출력
+    for i in word:                      # 포맷 지정 출력
         print(f"{i} ____ {dict[i]}")
 
 
-Main()                                          # 실행
+Main()                                  # 실행
