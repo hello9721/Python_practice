@@ -33,3 +33,5 @@
     Practice 8_1 - try/except 사용하여 숫자 타입 체커 만들어보기
 #### 22/09/14
     Practice 9_1 - open과 read 복습과 실습
+    Practice 9_2 - 문자열을 16진수로 출력하는 프로그램 작성해보기
+    Practice 9_3 - Binary로 파일 열어보기
