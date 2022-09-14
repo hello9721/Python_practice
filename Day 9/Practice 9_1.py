@@ -1,3 +1,5 @@
+    # font = Casacadia Code
+
     # sort 실습
 
 s = [14, 12, "book", "1", 94, 0]
