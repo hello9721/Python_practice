@@ -36,3 +36,4 @@
     Practice 9_1 - open과 read 복습과 실습
     Practice 9_2 - 문자열을 16진수로 출력하는 프로그램 작성해보기
     Practice 9_3 - Binary로 파일 열어보기
+    Practice 9_4 - 아스키 코드 표 출력하는 프로그램 작성해보기
