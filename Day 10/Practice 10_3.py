@@ -3,10 +3,10 @@
 
 class A:
     
-    x = 5
+    x = 5                       # Attribute (속성) = Class 내의 변수
     name = ""
 
-    def __init__(self):
+    def __init__(self):         # Method (메소드) = Class 내의 함수
         print("hello, there!")
         
     def age_change(self, x):
