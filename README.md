@@ -37,3 +37,7 @@
     Practice 9_2 - 문자열을 16진수로 출력하는 프로그램 작성해보기
     Practice 9_3 - Binary로 파일 열어보기
     Practice 9_4 - 아스키 코드 표 출력하는 프로그램 작성해보기
+#### 22/09/19
+    Practice 10_1 - open의 w 모드와 a 모드
+    Practice 10_2 - Class의 생성과 사용
+    Practice 10_3 - Class의 상속
