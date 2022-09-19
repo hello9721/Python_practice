@@ -13,7 +13,7 @@ class person:                               # 이름, 나이, 학번을 받아 �
     age = ""
     number = ""
     
-    def input(self, name, age, number):
+    def __init__(self, name, age, number):
         
         self.name = name
         self.age = age
@@ -92,9 +92,8 @@ def Main():                                 # 메인 루틴
 
         count += 1
         
-        info = student()                    # info라는 변수에 클래스 선언
-                
-        info.input(name, age, number)       # 입력받은 정보 전달
+        info = student(name, age, number)   # info라는 변수에 클래스 선언
+                                            # + ) 입력받은 정보 전달
         info.search()                       # 성적 조회
         info.print()                        # 정보 출력
 
