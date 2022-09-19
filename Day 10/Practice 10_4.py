@@ -81,7 +81,7 @@ def Main():                                 # 메인 루틴
 
         name = input("\n이름 : ")            # 이름에 0 입력시 종료
 
-        if name == '0':
+        if '0' in name:
 
             print("\n종료하겠습니다.\n")
             
@@ -108,4 +108,4 @@ def Main():                                 # 메인 루틴
             break                           # 저장 혹은 종료
 
         
-Main()                                      # 메인 루틴 실
+Main()                                      # 메인 루틴 실행
