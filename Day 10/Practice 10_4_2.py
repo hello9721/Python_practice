@@ -1,4 +1,8 @@
 
+
+###### ------- > score 클래스
+
+
 class score:
     
     score1 = 0
@@ -9,7 +13,7 @@ class score:
     total = 0
     mean = 0
 
-    # 학번별 성적이 담긴 파일에서 학번에 맞는 성적 데이터 불러오기
+# ------------ > 학번별 성적이 담긴 파일에서 학번에 맞는 성적 데이터 불러오기
     
     def fileToData(self, r, number):
         
@@ -24,19 +28,21 @@ class score:
                 self.score3 = int(c)
                 self.score4 = int(d)
 
-    # 합계와 평균 구하기
+# ------------ > 합계와 평균 구하기
     
     def total_mean(self):
         
         self.total = self.score1 + self.score2 + self.score3 + self.score4
         self.mean = self.total/4
 
-    # 성적, 합계, 평균을 리스트에 넣어주기
+# ------------ > 성적, 합계, 평균을 리스트에 넣어주기
     
     def dataToList(self, l, n):
         
         l.append([ n, self.score1, self.score2, self.score3, self.score4, self.total, self.mean ])
+
     
+###### ------- > person 클래스
 
 
 class person(score):
@@ -46,7 +52,7 @@ class person(score):
     phone = ""
     number = ""
 
-    # 파일에서 정보들을 가져와 리스트에 저장
+# ------------ > 파일에서 정보들을 가져와 리스트에 저장
 
     def fileToList(self, l, r):
         
@@ -68,9 +74,12 @@ class person(score):
         file.close()
         
 
+###### -------> Student 클래스
+        
+
 class Student(person):
     
-    # 정보들 폼에 맞춰 출력
+# ------------ > 정보들 폼에 맞춰 출력
 
     def print(self, l, l2):
         
@@ -104,8 +113,7 @@ class Student(person):
         print("||------------------|-------------|-----------|--------------------||-----------|-----------|-----------|-----------|-----------|-------------||")
 
 
-
-    # 정보들 폼에 맞춰 저장
+# ------------ > 정보들 폼에 맞춰 저장
 
     def saveToFile(self, l, l2):
         
@@ -151,7 +159,10 @@ class Student(person):
         print("\n----- > 저장이 완료되었습니다.\n")
 
 
-def Main():                                     # 메인루틴
+###### -------> 메인 루틴
+
+
+def Main():
     student = []
     score = []
     x = Student()
@@ -168,9 +179,14 @@ def Main():                                     # 메인루틴
         x.fileToData(file, i.number)
         x.total_mean()
         x.dataToList(score, i.number)
+
+    # 학생정보와 성적정보 출력
     
     x.print(student, score)
     x.saveToFile(student, score)
 
 
-Main()                                          # 메인루틴 실행
+###### -------> 실행
+
+
+Main()
