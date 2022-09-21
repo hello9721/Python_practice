@@ -48,4 +48,5 @@
 #### 22/09/20
     Practice 11_1 - class 복습 및 수치 연산자 메소드
 #### 22/09/21
-    Practice 12_1 - 수치 연산자 override 연습 - __add__, __sub__, __mul__
+    Practice 12_1 - 수치 연산자 override 연습 - __add__, __sub__, __mul__ ( Scalar / Vector )
+    Practice 12_2 - 다른 파일의 class를 현재 파일에 import 해보기
