@@ -31,17 +31,17 @@ class point:
 
         return point(x, y)
 
-    def __mul__(self, M):       # 다형성
-                                # 같은 이름을 가진 함수가 있을 때
-        x = self.x * M          # 그 뒤에 붙는 인수에 따라 적용 함수가 달라진다.
-        y = self.y * M
+    def __mul__(self, M):
 
-        return point(x, y)
+        if str(M).isnumeric():
 
-    def __mul__(self, P):
+            x = self.x * M
+            y = self.y * M
 
-        x = self.x * P.x
-        y = self.y * P.y
+        else:
+            
+            x = self.x * M.x
+            y = self.y * M.y
 
         return point(x, y)
 
@@ -59,3 +59,5 @@ print( P3.x, P3.y )
 print( P4.x, P4.y )
 print( P5.x, P5.y )
 print( P6.x, P6.y )
+
+
