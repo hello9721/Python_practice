@@ -33,23 +33,23 @@ class point:
 
     def __mul__(self, M):
 
-        if str(M).isnumeric():
+        if ( type(M) == point ) :   # M이 point 클래스라면
 
-            x = self.x * M
-            y = self.y * M
-
-        else:
-            
-            x = self.x * M.x
+            x = self.x * M.x        # Vector 곱셈
             y = self.y * M.y
 
+        else:                       # 아니라면
+            
+            x = self.x * M          # Scalar 곱셈
+            y = self.y * M
+            
         return point(x, y)
 
 
-P1 = point( 0, 7 )
-P2 = point( 1, 5 )
+P1 = point( 10, 7 )
+P2 = point( 5, 6 )
 
-P3 = P1 + P2
+P3 = P1 + P2            # __add__
 P4 = P1 - P2            # __sub__
 P5 = P2 * 200           # Scalar 곱셈
 P6 = P1 * P2            # Vector 곱셈
