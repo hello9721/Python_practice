@@ -48,4 +48,5 @@
 #### 22/09/20
     Practice 11_1 - class 복습 및 수치 연산자 메소드
 #### 22/09/21
-    Practice 12_1 - 수치 연산자 override 연습
+    Practice 12_1 - 수치 연산자 override 연습 - __add__
+    Practice 12_2 - 수치 연산자 override 연습 - __sub__
