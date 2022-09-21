@@ -3,6 +3,8 @@
 
 # point == 2D point
 
+# __add__
+
 # P1 + P2 를 했을 때 P3(x1+x2, y1+y2) 가 생성되도록
 
 class point:
