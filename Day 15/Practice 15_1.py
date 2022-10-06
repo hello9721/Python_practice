@@ -1,4 +1,4 @@
-from Practice_15_1_df import *
+from P_15_1_df import *
 
 set_size( 7200 )
 
