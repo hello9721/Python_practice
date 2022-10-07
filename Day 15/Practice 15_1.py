@@ -5,7 +5,7 @@ t.bgcolor("black")
 
 t.shape("turtle")                       # 펜 설정
 t.speed(0)
-t.hideturtle()                          # 거북이를 숨기면 속도가 더 
+t.hideturtle()                          # 거북이를 숨기면 속도가 더 빨라짐
 
 # 테두리 그리기
 
@@ -70,6 +70,7 @@ edge( 210, 300, 0 )                     # ㅡ
 
 
 # 거북이 퍼포먼스
+
 move( 0, 0 )
 t.color("green")
 rt( 90 )
