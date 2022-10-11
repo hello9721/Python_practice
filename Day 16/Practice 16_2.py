@@ -44,6 +44,20 @@ scr.onkey(reset, "r")
 scr.onkey(end, "Escape")
 
 
+# ← : 왼쪽으로 30도 회전
+# → : 오른쪽으로 30도 회전
+# ↑ : 속도 업
+# ↓ : 속도 다운
+# W / A / S / D : 위 / 왼 / 아래 / 오른
+# SPACE : 펜 들기 / 내리기
+# 1 : 펜 모양 바꾸기
+# 2 : 색 바꾸기
+# Q / E : 색칠 시작 / 끝
+# T : 펜 모양으로 도장찍기
+# R : 위치를 원점으로
+# ESC : 프로그램 종료
+
+
 while 1:
     try:
         p.forward(speed)        # speed 만큼 계속 직진
