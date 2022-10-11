@@ -3,6 +3,7 @@
 ##while 1:
 ##    print(ord(msvcrt.getch()))
 ##                          # 키보드 입력시 그때그때 바로 단일문자를 읽어옴
+### IDEL 스크립트에서 작성시 제대로 실행되지 않는다.
 
 import turtle as t
 
