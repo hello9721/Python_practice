@@ -62,5 +62,5 @@ while 1:
     try:
         p.forward(speed)        # speed 만큼 계속 직진
     except:
-        print("종료합니다.")    # end 실행으로 인한 오류 발생시 종료 문구 출력
+        print("종료합니다.")     # end 실행으로 인한 오류 발생시 종료 문구 출력
         break
