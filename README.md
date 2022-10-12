@@ -96,4 +96,6 @@
     Practice 17_1 - 시스템 창 띄워보기 (GUI)
     Practice 17_2 - uic 클래스를 이용하여 특정 ui파일(QT Designer)을 불러와 창으로 띄우기
                     / cmd 명령어를 bat 파일로 만들어 실행해보기
-    Practice 17_2 - convUI.bat 로 ui파일을 변환한 py를 편집하여 클릭 수를 카운트 해주는 시스템 창 만들기
+    Practice 17_3 - convUI.bat 로 ui파일을 변환한 py를 편집하여 클릭 수를 카운트 해주는 시스템 창 만들기
+    Practice 17_4 - 3에서 진행 퍼센트 게이지 추가
+                    / cnt 가 높아질수로 게이지 올리기가 어려워지도록 & 게이지가 100을 채우면 클릭버튼 비활성화
