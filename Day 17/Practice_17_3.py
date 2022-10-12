@@ -53,8 +53,8 @@ class Ui_MainWindow(object):
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
 
-        self.btn__cnt.clicked.connect(self.btn_clicked)        # 클릭 이벤트 발생시 함수 실행
-        self.btn__reset.clicked.connect(self.reset)            # reset 클릭 시 함수 실행
+        self.btn__cnt.clicked.connect(self.btn_clicked)         # 클릭 이벤트 발생시 함수 실행
+        self.btn__reset.clicked.connect(self.reset)             # reset 클릭 시 함수 실행
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
