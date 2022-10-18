@@ -2,6 +2,15 @@
 ####
 #### 22/08/23  
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
+    <details>
+    <summary>Open / Close</summary>
+
+
+    > header 및 menu 애니메이션 작성 / 수정 + 열고 닫기  
+
+    ![day 1~2](https://user-images.githubusercontent.com/95046369/195780266-a511d4a8-bf84-4eb2-9cae-2c28a7d7358c.gif)
+
+    </details>
 #### 22/08/25  
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
