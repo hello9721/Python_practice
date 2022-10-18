@@ -1,7 +1,7 @@
 ### 한국 IT 전문 학원 - SW 및 빅데이터 지역 인재 양성 과정 - Python
 ####
 #### 22/08/23 <blockquote> 
-    Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
+            Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
 <details>
 <summary>Detail</summary>
 
