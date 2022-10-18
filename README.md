@@ -13,6 +13,8 @@
 
 </details></blockquote>
 
+</br>
+
 #### 22/08/25
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
