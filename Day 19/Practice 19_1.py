@@ -17,8 +17,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(800, 625)
+        
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        
         self.txt__edit = QtWidgets.QTextEdit(self.centralwidget)
         self.txt__edit.setGeometry(QtCore.QRect(9, 9, 781, 411))
         font = QtGui.QFont()
@@ -26,6 +28,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setPointSize(12)
         self.txt__edit.setFont(font)
         self.txt__edit.setObjectName("txt__edit")
+        
         self.txt__open = QtWidgets.QTextEdit(self.centralwidget)
         self.txt__open.setGeometry(QtCore.QRect(10, 470, 641, 31))
         font = QtGui.QFont()
@@ -33,6 +36,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setPointSize(12)
         self.txt__open.setFont(font)
         self.txt__open.setObjectName("txt__open")
+        
         self.txt__save = QtWidgets.QTextEdit(self.centralwidget)
         self.txt__save.setGeometry(QtCore.QRect(10, 510, 641, 31))
         font = QtGui.QFont()
@@ -40,6 +44,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setPointSize(12)
         self.txt__save.setFont(font)
         self.txt__save.setObjectName("txt__save")
+        
         self.btn__open = QtWidgets.QPushButton(self.centralwidget)
         self.btn__open.setGeometry(QtCore.QRect(660, 470, 131, 31))
         font = QtGui.QFont()
@@ -49,6 +54,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setWeight(50)
         self.btn__open.setFont(font)
         self.btn__open.setObjectName("btn__open")
+        
         self.btn__save = QtWidgets.QPushButton(self.centralwidget)
         self.btn__save.setGeometry(QtCore.QRect(660, 510, 131, 31))
         font = QtGui.QFont()
@@ -58,6 +64,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setWeight(50)
         self.btn__save.setFont(font)
         self.btn__save.setObjectName("btn__save")
+        
         self.btn__reset = QtWidgets.QPushButton(self.centralwidget)
         self.btn__reset.setGeometry(QtCore.QRect(660, 550, 131, 31))
         font = QtGui.QFont()
@@ -67,6 +74,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setWeight(50)
         self.btn__reset.setFont(font)
         self.btn__reset.setObjectName("btn__reset")
+        
         self.lbl__status = QtWidgets.QLabel(self.centralwidget)
         self.lbl__status.setGeometry(QtCore.QRect(10, 430, 781, 31))
         font = QtGui.QFont()
@@ -76,39 +84,44 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.lbl__status.setText("")
         self.lbl__status.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl__status.setObjectName("lbl__status")
+        
         self.rb__s_ansi = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb__s_ansi.setGeometry(QtCore.QRect(569, 550, 81, 31))
+        self.rb__s_ansi.setGeometry(QtCore.QRect(580, 550, 81, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
         self.rb__s_ansi.setFont(font)
         self.rb__s_ansi.setObjectName("rb__s_ansi")
+        
         self.rb__s_utf = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb__s_utf.setGeometry(QtCore.QRect(470, 550, 81, 31))
+        self.rb__s_utf.setGeometry(QtCore.QRect(489, 550, 81, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
         self.rb__s_utf.setFont(font)
         self.rb__s_utf.setIconSize(QtCore.QSize(12, 12))
         self.rb__s_utf.setObjectName("rb__s_utf")
+        
         self.rb__o_utf = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb__o_utf.setGeometry(QtCore.QRect(140, 550, 81, 31))
+        self.rb__o_utf.setGeometry(QtCore.QRect(144, 550, 91, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
         self.rb__o_utf.setFont(font)
         self.rb__o_utf.setIconSize(QtCore.QSize(12, 12))
         self.rb__o_utf.setObjectName("rb__o_utf")
+        
         self.rb__o_ansi = QtWidgets.QRadioButton(self.centralwidget)
-        self.rb__o_ansi.setGeometry(QtCore.QRect(239, 550, 81, 31))
+        self.rb__o_ansi.setGeometry(QtCore.QRect(235, 550, 91, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
         self.rb__o_ansi.setFont(font)
         self.rb__o_ansi.setObjectName("rb__o_ansi")
+        
         self.lbl__otype = QtWidgets.QLabel(self.centralwidget)
         self.lbl__otype.setEnabled(False)
-        self.lbl__otype.setGeometry(QtCore.QRect(19, 550, 101, 31))
+        self.lbl__otype.setGeometry(QtCore.QRect(15, 550, 101, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
@@ -116,24 +129,27 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setWeight(75)
         self.lbl__otype.setFont(font)
         self.lbl__otype.setObjectName("lbl__otype")
+        
         self.lbl__stype = QtWidgets.QLabel(self.centralwidget)
         self.lbl__stype.setEnabled(False)
-        self.lbl__stype.setGeometry(QtCore.QRect(340, 550, 121, 31))
+        self.lbl__stype.setGeometry(QtCore.QRect(346, 550, 121, 31))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
         self.lbl__stype.setFont(font)
-        self.lbl__stype.setAlignment(QtCore.Qt.AlignCenter)
         self.lbl__stype.setObjectName("lbl__stype")
+        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 800, 21))
-        self.menubar.setObjectName("menubar")
+        self.menubar.setObjectName("menubar"
+                                   )
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
+        
         MainWindow.setStatusBar(self.statusbar)
 
         self.txt__open.setEnabled(False)
@@ -244,8 +260,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.rb__s_utf.setText(_translate("MainWindow", "UTF-8"))
         self.rb__o_utf.setText(_translate("MainWindow", "UTF-8"))
         self.rb__o_ansi.setText(_translate("MainWindow", "ANSI"))
-        self.lbl__otype.setText(_translate("MainWindow", "OPEN TYPE"))
-        self.lbl__stype.setText(_translate("MainWindow", "SAVE TYPE"))
+        self.lbl__otype.setText(_translate("MainWindow", "INPUT    ▷"))
+        self.lbl__stype.setText(_translate("MainWindow", "OUTPUT    ▷"))
 
 if __name__ == "__main__":
     
