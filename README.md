@@ -2,7 +2,7 @@
 ####
 #### 22/08/23  
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
-<details><blockquote>
+<blockquote><details>
 <summary>Open / Close</summary>
 
 </br>
@@ -11,7 +11,7 @@
 
 ![P1](https://user-images.githubusercontent.com/95046369/196371048-cd334327-e1bb-44ff-aa21-d9cfc80510f9.gif)
 
-</blockquote></details>
+</details></blockquote>
 
 #### 22/08/25  
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
