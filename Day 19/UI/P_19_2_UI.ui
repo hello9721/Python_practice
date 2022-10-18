@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>624</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TEXT EDITOR</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTextEdit" name="txt__edit">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>9</y>
+      <width>780</width>
+      <height>481</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code Light</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="txt__open">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>500</y>
+      <width>780</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code Light</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="txt__save">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>540</y>
+      <width>780</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Cascadia Code Light</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="act__open"/>
+    <addaction name="act__save"/>
+    <addaction name="act__reset"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <widget class="QMenu" name="m__ie">
+     <property name="title">
+      <string>Input Encoding</string>
+     </property>
+     <addaction name="act__i_utf"/>
+     <addaction name="act__i_ansi"/>
+    </widget>
+    <widget class="QMenu" name="m__oe">
+     <property name="title">
+      <string>Output Encoding</string>
+     </property>
+     <addaction name="act__o_utf"/>
+     <addaction name="act__o_ansi"/>
+    </widget>
+    <addaction name="m__ie"/>
+    <addaction name="m__oe"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuSetting"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="act__open">
+   <property name="text">
+    <string>File Open</string>
+   </property>
+  </action>
+  <action name="act__save">
+   <property name="text">
+    <string>File Save</string>
+   </property>
+  </action>
+  <action name="act__reset">
+   <property name="text">
+    <string>Window Reset</string>
+   </property>
+  </action>
+  <action name="act__i_utf">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>UTF-8</string>
+   </property>
+  </action>
+  <action name="act__i_ansi">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ANSI</string>
+   </property>
+  </action>
+  <action name="act__o_utf">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>UTF-8</string>
+   </property>
+  </action>
+  <action name="act__o_ansi">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>ANSI</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
