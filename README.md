@@ -2,8 +2,8 @@
 
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기 
-<p align="right"><details>
-<summary>Detail</summary>
+<details>
+<summary>  </summary>
 
 </br>
 
@@ -11,7 +11,7 @@
 
 ![P1](https://user-images.githubusercontent.com/95046369/196371048-cd334327-e1bb-44ff-aa21-d9cfc80510f9.gif)
 
-</details></p>
+</details>
 
 #
 #### 22/08/25
