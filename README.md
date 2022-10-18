@@ -5,6 +5,7 @@
 <details>
 <summary>Open / Close</summary>
 
+</br>
 > Practice 1 
 
 ![P1](https://user-images.githubusercontent.com/95046369/196371048-cd334327-e1bb-44ff-aa21-d9cfc80510f9.gif)
@@ -19,6 +20,7 @@
 <details>
 <summary>Open / Close</summary>
 
+</br>
 > Practice 2_2  
 
 ![P2-2](https://user-images.githubusercontent.com/95046369/196371702-2dbb3537-6377-4a14-a0b0-11b44e487c0a.gif)
@@ -34,6 +36,7 @@
 <details>
 <summary>Open / Close</summary>
 
+</br>
 > Practice 3_5 
 
 ![P3-5](https://user-images.githubusercontent.com/95046369/196372290-d7ae7527-e060-4033-a93d-ef0ce0525ab8.gif)
@@ -47,6 +50,7 @@
 <details>
 <summary>Open / Close</summary>
 
+</br>
 > Practice 4_2  
 
 ![P4-2](https://user-images.githubusercontent.com/95046369/196372712-3f08b197-81ce-4085-9b77-76e23bebef96.gif)
