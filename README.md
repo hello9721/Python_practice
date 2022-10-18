@@ -1,5 +1,5 @@
-### 한국 IT 전문 학원 - SW 및 빅데이터 지역 인재 양성 과정 - Python
-####
+### 한국 IT 전문 학원 - S/W 및 빅데이터 지역 인재 양성 과정 - Python
+* * *
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
 <blockquote> <details>
@@ -13,8 +13,7 @@
 
 </details></blockquote>
 
-</br>
-
+* * *
 #### 22/08/25
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
@@ -31,6 +30,7 @@
 
 </details></blockquote>
 
+* * *
 #### 22/08/29
     Practice 3_1 - while과 input()을 이용한 간단한 구구단 출력기 작성해보기  
     Practice 3_2 - for문을 활용한 간단한 반복문 작성해보기  
@@ -48,6 +48,7 @@
 
 </details></blockquote>
 
+* * *
 #### 22/08/30
     Practice 4_1 - 함수 정의 하여 실행해보기  
     Practice 4_2 - .upper()과 .lower()을 이용하여 자동으로 단어 앞글자는 대문자로, 나머지는 소문자로 하는  
@@ -62,6 +63,8 @@
 ![P4-2](https://user-images.githubusercontent.com/95046369/196372712-3f08b197-81ce-4085-9b77-76e23bebef96.gif)
 
 </details></blockquote>
+
+</br>
 
 #### 22/08/31
     Practice 5_1 - URL을 받아 파싱과 추출을 이용하여 도메인과 컨텐츠명 추출하기
