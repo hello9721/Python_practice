@@ -2,6 +2,7 @@
 
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
+#
 <blockquote> <details>
 <summary>Detail</summary>
 
@@ -19,6 +20,7 @@
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
     Practice 2_2 - 주급 계산기에 초과수당과 주말근무수당 개념을 더해 더 자세한 주급 계산기 작성해보기  
     Practice 2_3 - while문을 활용한 간단한 반복문 작성해보기  
+#
 <blockquote> <details>
 <summary>Detail</summary>
 
