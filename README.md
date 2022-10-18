@@ -14,13 +14,14 @@
 </details>
 
 #
+
 #### 22/08/25
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
     Practice 2_2 - 주급 계산기에 초과수당과 주말근무수당 개념을 더해 더 자세한 주급 계산기 작성해보기  
     Practice 2_3 - while문을 활용한 간단한 반복문 작성해보기 
-<blockquote> <details>
-<summary>Detail</summary>
+<details>
+<summary>  </summary>
 
 </br>
 
@@ -28,17 +29,18 @@
 
 ![P2-2](https://user-images.githubusercontent.com/95046369/196371702-2dbb3537-6377-4a14-a0b0-11b44e487c0a.gif)
 
-</details></blockquote>
+</details>
 
 #
+
 #### 22/08/29
     Practice 3_1 - while과 input()을 이용한 간단한 구구단 출력기 작성해보기  
     Practice 3_2 - for문을 활용한 간단한 반복문 작성해보기  
     Practice 3_3 - 원하는 만큼 숫자 입력 후 그 숫자들 중 최대값, 최소값 출력해보기  
     Practice 3_4 - 여러 점수를 받아 총 학생수, 점수 합계, 평균 출력해보기  
     Practice 3_5 - 학생번호별 과목별 점수를 받아 학생별 총점, 평균과 과목별 총점, 평균 출력해보기  
-<blockquote> <details>
-<summary>Detail</summary>
+<details>
+<summary>  </summary>
 
 </br>
 
@@ -46,15 +48,16 @@
 
 ![P3-5](https://user-images.githubusercontent.com/95046369/196372290-d7ae7527-e060-4033-a93d-ef0ce0525ab8.gif)
 
-</details></blockquote>
+</details>
 
 #
+
 #### 22/08/30
     Practice 4_1 - 함수 정의 하여 실행해보기  
     Practice 4_2 - .upper()과 .lower()을 이용하여 자동으로 단어 앞글자는 대문자로, 나머지는 소문자로 하는  
                    함수 정의 후 이용해보기
-<blockquote> <details>
-<summary>Detail</summary>
+<details>
+<summary>  </summary>
 
 </br>
 
@@ -62,9 +65,10 @@
 
 ![P4-2](https://user-images.githubusercontent.com/95046369/196372712-3f08b197-81ce-4085-9b77-76e23bebef96.gif)
 
-</details></blockquote>
+</details>
 
 #
+
 #### 22/08/31
     Practice 5_1 - URL을 받아 파싱과 추출을 이용하여 도메인과 컨텐츠명 추출하기
     Practice 5_2 - 특정 문자열에서 원하는 부분을 추출하여 원하는 포맷으로 출력하기
