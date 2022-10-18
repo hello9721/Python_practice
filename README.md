@@ -1,8 +1,7 @@
 # 한국 IT 전문 학원 - S/W 및 빅데이터 지역 인재 양성 과정 - Python
 
 #### 22/08/23 
-    Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기  
-#
+    Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기 
 <blockquote> <details>
 <summary>Detail</summary>
 
@@ -19,8 +18,7 @@
     Practice 2   - if문을 활용한 간단한 제어문 작성해보기  
     Practice 2_1 - input()으로 수를 입력받아 해당 수가 몇번째 그룹에 속하는지 print()  
     Practice 2_2 - 주급 계산기에 초과수당과 주말근무수당 개념을 더해 더 자세한 주급 계산기 작성해보기  
-    Practice 2_3 - while문을 활용한 간단한 반복문 작성해보기  
-#
+    Practice 2_3 - while문을 활용한 간단한 반복문 작성해보기 
 <blockquote> <details>
 <summary>Detail</summary>
 
@@ -50,7 +48,7 @@
 
 </details></blockquote>
 
-* * *
+#
 #### 22/08/30
     Practice 4_1 - 함수 정의 하여 실행해보기  
     Practice 4_2 - .upper()과 .lower()을 이용하여 자동으로 단어 앞글자는 대문자로, 나머지는 소문자로 하는  
@@ -66,8 +64,7 @@
 
 </details></blockquote>
 
-</br>
-
+#
 #### 22/08/31
     Practice 5_1 - URL을 받아 파싱과 추출을 이용하여 도메인과 컨텐츠명 추출하기
     Practice 5_2 - 특정 문자열에서 원하는 부분을 추출하여 원하는 포맷으로 출력하기
