@@ -21,7 +21,7 @@
     Practice 2_2 - 주급 계산기에 초과수당과 주말근무수당 개념을 더해 더 자세한 주급 계산기 작성해보기  
     Practice 2_3 - while문을 활용한 간단한 반복문 작성해보기 
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -40,7 +40,7 @@
     Practice 3_4 - 여러 점수를 받아 총 학생수, 점수 합계, 평균 출력해보기  
     Practice 3_5 - 학생번호별 과목별 점수를 받아 학생별 총점, 평균과 과목별 총점, 평균 출력해보기  
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -57,7 +57,7 @@
     Practice 4_2 - .upper()과 .lower()을 이용하여 자동으로 단어 앞글자는 대문자로, 나머지는 소문자로 하는  
                    함수 정의 후 이용해보기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -77,7 +77,7 @@
                                                                      => \ 를 / 로 해주거나 \\ 사용하기 )
     Practice 5_3 - 5_2의 내용을 각각 함수로 정의해보고 메인루틴 함수 정의 해보기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -92,7 +92,7 @@
 #### 22/09/06
     Practice 6_1 - Dictionary와 get 함수를 이용한 구문 분석 ( 구성 단어와 빈도수 측정 )
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -109,7 +109,7 @@
     Practice 7_2 - open으로 불러온 텍스트 파일의 줄의 수 카운트
                    / read를 이용하여 텍스트파일을 하나의 문자열로 읽어오기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -124,7 +124,7 @@
 #### 22/09/13
     Practice 8_1 - try/except 사용하여 숫자 타입 체커 만들어보기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -142,7 +142,7 @@
     Practice 9_3 - Binary로 파일 열어보기
     Practice 9_4 - 아스키 코드 표 출력하는 프로그램 작성해보기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -169,7 +169,7 @@
     Practice 10_4_2 - 10_4 실습 응용 - 파일에서 학생 정보를 가져오고
                                        또 다른 파일에서 성적 정보를 가져와서 폼에 맞춰 출력 및 파일로 저장하기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -224,7 +224,7 @@
     MISSION 11 - 파일명을 입력받아 임의의 텍스트파일을 열어 그 안에서 또 입력 받은 찾을단어를 바꿀단어로 바꿔
                  다른 파일로 저장하고 빈도수 출력.
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -305,7 +305,7 @@
     Practice 14_1 - 터틀 그래픽 ( 실습 : 오징어게임판 그리기 )
     Practice 14_2 - 1의 코드를 20줄 내로 줄이기 ( 필요한 함수가 들어갈 파일을 따로 만들어 임포트 함. 딱 20줄 완료.)
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -320,7 +320,7 @@
 #### 22/10/06
     Practice 15_1 - 태극기 그리기 ( 터틀 그래픽 숙제 )
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -337,7 +337,7 @@
     Practice 16_2 - 키보드 입력으로 터틀 그래픽 그림 그리기 ( 함수 이용 )
     Practice 16_3 - input() 으로 입력되는 문자열에 따라 ( W / A / S / D ) = ( 위 / 왼 / 아래 / 오른 ) 쪽으로 움직이며 직선을 그리기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -358,7 +358,7 @@
                     / cnt 가 높아질수로 게이지 올리기가 어려워지도록 & 게이지가 100을 채우면 클릭버튼 비활성화
     Practice 17_5 - 금고 비밀번호 맞추기 게임 만들기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -380,7 +380,7 @@
     Practice 18_1 - 대문자 - 소문자 변환기 만들기
     Practice 18_2 - 텍스트 파일을 불러와 수정하여 또 다시 저장 할 수 있는 시스템 창 만들기
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
@@ -403,7 +403,7 @@
     Practice 19_2 - 1의 프로그램을 인코딩 선택과 파일의 열기, 저장, 리셋을 메뉴바로 / 인코딩은 현재 선택된 인코딩 방식에 체크되어 있도록 설정
                     / 상태메세지를 스테이터스바에 띄우도록 설정
 <details>
-<summary>  </summary>
+<summary> :world_map: </summary>
 
 </br>
 
