@@ -3,7 +3,7 @@
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기 
 <details>
-<summary> ![images-outline](https://user-images.githubusercontent.com/95046369/196587468-74dec5de-edaa-43b4-8732-97d5560be8e7.svg) </summary>
+<summary> :world_map: </summary>
 
 </br>
 
