@@ -223,6 +223,79 @@
     MISSION 10 - 이때까지 작성했던 문제들을 조합하여 특정 입력을 받으면 특정 기능이 실행되도록 만들기
     MISSION 11 - 파일명을 입력받아 임의의 텍스트파일을 열어 그 안에서 또 입력 받은 찾을단어를 바꿀단어로 바꿔
                  다른 파일로 저장하고 빈도수 출력.
+<details>
+<summary>  </summary>
+
+</br>
+
+> MISSION 01
+
+![M1](https://user-images.githubusercontent.com/95046369/196583553-7731a7fd-61c3-4c13-923f-04d03b9120b8.gif)
+
+</br>
+
+> MISSION 02
+
+![M2](https://user-images.githubusercontent.com/95046369/196583562-a7ae1783-e6d9-42b5-ac81-5f2bb8bf43fa.gif)
+
+</br>
+
+> MISSION 03
+
+![M3](https://user-images.githubusercontent.com/95046369/196583563-9dc84dfa-27e3-4706-bcf3-b71363edc223.gif)
+
+</br>
+
+> MISSION 04
+
+![M4](https://user-images.githubusercontent.com/95046369/196583566-c0dcb9df-6b1d-4888-b6da-d0dc8fbda17e.gif)
+
+</br>
+
+> MISSION 05
+
+![M5](https://user-images.githubusercontent.com/95046369/196583567-4819b4a5-5570-4690-bdd7-6ed71f921311.gif)
+
+</br>
+
+> MISSION 06
+
+![M6](https://user-images.githubusercontent.com/95046369/196583568-8959a87c-e3e9-4561-830b-55cea5818f8d.gif)
+
+</br>
+
+> MISSION 07
+
+![M7](https://user-images.githubusercontent.com/95046369/196583570-8ac38ef3-c865-49fe-bc72-6ee6a971cf14.gif)
+
+</br>
+
+> MISSION 08
+
+![M8](https://user-images.githubusercontent.com/95046369/196583571-3aec813d-39b6-46c6-b01e-8b86c3d0476a.gif)
+
+</br>
+
+> MISSION 09
+
+![M9](https://user-images.githubusercontent.com/95046369/196583573-6024fe8d-5a4e-4877-ab8e-02508b6b5422.gif)
+
+</br>
+
+> MISSION 10
+
+![M10](https://user-images.githubusercontent.com/95046369/196583576-38463dff-d2ea-4fbc-9bf7-53e95760b49a.gif)
+
+</br>
+
+> MISSION 11
+
+![M11](https://user-images.githubusercontent.com/95046369/196583578-ce5b690d-4052-4c1e-9f71-693bafbeac16.gif)
+
+</details>
+
+#
+ 
 #### 22/10/04
     Practice 13_1 - 전체적으로 복습 ( + 비트 연산자 )
 #### 22/10/05
