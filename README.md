@@ -1,12 +1,9 @@
-<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 # 한국 IT 전문 학원 - S/W 및 빅데이터 지역 인재 양성 과정 - Python
 
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기 
 <details>
-<summary> <ion-icon name="images-outline"></ion-icon> </summary>
+<summary> ![images-outline](https://user-images.githubusercontent.com/95046369/196587468-74dec5de-edaa-43b4-8732-97d5560be8e7.svg) </summary>
 
 </br>
 
