@@ -76,19 +76,90 @@
                    > 참고 2 ( c:\user\temp\test.py => \u로 인해 오류가 나고 \t는 탭으로 인식 
                                                                      => \ 를 / 로 해주거나 \\ 사용하기 )
     Practice 5_3 - 5_2의 내용을 각각 함수로 정의해보고 메인루틴 함수 정의 해보기
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 5_3 
+
+![P5-3](https://user-images.githubusercontent.com/95046369/196573359-99b19f19-4c73-4eff-bd01-2e24ed1d5423.gif)
+
+</details>
+
+#
+   
 #### 22/09/06
     Practice 6_1 - Dictionary와 get 함수를 이용한 구문 분석 ( 구성 단어와 빈도수 측정 )
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 6_1
+
+![P6-1](https://user-images.githubusercontent.com/95046369/196573572-76d54fd1-7a9d-4e2e-b0fc-cb3a65c3feac.gif)
+
+</details>
+
+#
+ 
 #### 22/09/07
     Practice 7_1 - 6에서 했던 코드를 이제 input이 아닌 open으로 텍스트파일을 불러와서 적용해보기
     Practice 7_2 - open으로 불러온 텍스트 파일의 줄의 수 카운트
                    / read를 이용하여 텍스트파일을 하나의 문자열로 읽어오기
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 7_2
+
+![P7-2](https://user-images.githubusercontent.com/95046369/196574162-7fa1fbfb-fdff-438f-b37d-e31e97b3adc5.gif)
+
+</details>
+
+#
+ 
 #### 22/09/13
     Practice 8_1 - try/except 사용하여 숫자 타입 체커 만들어보기
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 8_1
+
+![P8-1](https://user-images.githubusercontent.com/95046369/196574397-ee4140b0-acb1-41f2-9662-c4bbf532e85d.gif)
+
+</details>
+
+#
+ 
 #### 22/09/14
     Practice 9_1 - open과 read 복습과 실습
     Practice 9_2 - 문자열을 16진수로 출력하는 프로그램 작성해보기
     Practice 9_3 - Binary로 파일 열어보기
     Practice 9_4 - 아스키 코드 표 출력하는 프로그램 작성해보기
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 9_2
+
+![P9-2](https://user-images.githubusercontent.com/95046369/196574968-9832d2e2-5868-4e35-a094-869810e3b729.gif)
+
+</br>
+
+> Practice 9_4
+
+![P9-4](https://user-images.githubusercontent.com/95046369/196575275-9d3b72c4-f709-4e99-a696-5d16bc932f01.gif)
+
+</details>
+
+#
+ 
 #### 22/09/19
     Practice 10_1 - open의 w 모드와 a 모드
     Practice 10_2 - Class의 생성과 사용
@@ -97,11 +168,50 @@
     Practice 10_4_1 - 10_4 실습 응용 - 학생 정보 입력 받아 폼에 맞춰 출력하기
     Practice 10_4_2 - 10_4 실습 응용 - 파일에서 학생 정보를 가져오고
                                        또 다른 파일에서 성적 정보를 가져와서 폼에 맞춰 출력 및 파일로 저장하기
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 10_4_2
+
+![P10-4-2](https://user-images.githubusercontent.com/95046369/196576463-9bb6bdee-6fab-4cda-8a2a-b559970cde57.gif)
+
+</details>
+
+#
+ 
 #### 22/09/20
     Practice 11_1 - class 복습 및 수치 연산자 메소드
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 6-1
+
+![P6-1](https://user-images.githubusercontent.com/95046369/196573572-76d54fd1-7a9d-4e2e-b0fc-cb3a65c3feac.gif)
+
+</details>
+
+#
+ 
 #### 22/09/21
     Practice 12_1 - 수치 연산자 override 연습 - __add__, __sub__, __mul__ ( Scalar / Vector )
     Practice 12_2 - 다른 파일의 class를 현재 파일에 import
+<details>
+<summary>  </summary>
+
+</br>
+
+> Practice 6-1
+
+![P6-1](https://user-images.githubusercontent.com/95046369/196573572-76d54fd1-7a9d-4e2e-b0fc-cb3a65c3feac.gif)
+
+</details>
+
+#
+ 
 #### 22/09/27 ~ 22/09/29 ( MISSION 1 )
     MISSION 01 - 랜덤한 이름과 이름 하나당 난수 (0 - 100) 4개를 각각 국어, 수학, 영어, 컴퓨터 점수로 넣어 파일로 저장 
     MISSION 02 - sin, cos, tan 그래프와 원, 원안의 sin 그래프 (태극) 을 문자열로 그리기
