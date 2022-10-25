@@ -420,5 +420,6 @@
     
 #
 
-#### 22/10/24
+#### 22/10/24 ~ 22/10/25
     Practice 21_1 - SQLite 의 설치 및 기본 사용법
+    Practice 21_2 - SQL 문법 ( ALTER TABLE / INSERT INTO / UPDATE - SET - / DELETE FROM / JOIN / WHERE / LIKE )
