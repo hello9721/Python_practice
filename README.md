@@ -420,5 +420,14 @@
     
 #
 
-#### 22/10/24
+#### 22/10/24 ~ 22/10/25
     Practice 21_1 - SQLite 의 설치 및 기본 사용법
+    Practice 21_2 - SQL 문법 ( ALTER TABLE / INSERT INTO / UPDATE - SET - / DELETE FROM / JOIN / WHERE / LIKE )
+
+#
+
+#### 22/10/26
+    Practice 22_1 - python에서 sqlite 연결하여 사용하기 (sqlite3)
+    Practice 22_2 - shell에 SQL INTERPRETER 만들어 DB 테이블 출력하기
+    Practice 22_3 - PyQt5를 이용하여 SQL INTERPRETER 만들기
+                    ( 현재 Join 구현 실패 -> 헤더를 표시하도록 생각하니까 복잡해지기에, 일단은 내일 헤더는 제외 하고 완성부터 시켜보기 )
