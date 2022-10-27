@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>972</width>
+    <height>752</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>SQL Interpreter</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="btn__enter">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>590</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>ENTER</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn__reset">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>650</y>
+      <width>121</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>RESET</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="txt__sql">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>821</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>20</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="placeholderText">
+     <string>SQL INPUT : </string>
+    </property>
+   </widget>
+   <widget class="QTableWidget" name="tbl__view">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>821</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+     </font>
+    </property>
+    <property name="gridStyle">
+     <enum>Qt::DotLine</enum>
+    </property>
+    <property name="sortingEnabled">
+     <bool>true</bool>
+    </property>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>새 행</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>새 행</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>새 행</string>
+     </property>
+    </column>
+    <item row="0" column="0">
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
+    <item row="1" column="1">
+     <property name="text">
+      <string>2</string>
+     </property>
+    </item>
+    <item row="2" column="2">
+     <property name="text">
+      <string>3</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QListWidget" name="lst__view">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>10</y>
+      <width>121</width>
+      <height>571</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="m__bar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>972</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="m__file">
+    <property name="title">
+     <string>FILE</string>
+    </property>
+    <widget class="QMenu" name="menuDB">
+     <property name="title">
+      <string>DB</string>
+     </property>
+     <addaction name="actionDB_OPEN"/>
+     <addaction name="actionDB_SAVE"/>
+    </widget>
+    <widget class="QMenu" name="menuSQL">
+     <property name="title">
+      <string>SQL</string>
+     </property>
+     <addaction name="actionSQL_OPEN"/>
+     <addaction name="actionSQL_SAVE"/>
+    </widget>
+    <addaction name="menuDB"/>
+    <addaction name="menuSQL"/>
+   </widget>
+   <widget class="QMenu" name="m__option">
+    <property name="title">
+     <string>OPTION</string>
+    </property>
+    <addaction name="o__utf"/>
+    <addaction name="o__cp"/>
+    <addaction name="o__ansi"/>
+   </widget>
+   <addaction name="m__file"/>
+   <addaction name="m__option"/>
+  </widget>
+  <widget class="QStatusBar" name="s__bar"/>
+  <action name="db__save">
+   <property name="text">
+    <string>DB SAVE</string>
+   </property>
+  </action>
+  <action name="sql__save">
+   <property name="text">
+    <string>SQL SAVE</string>
+   </property>
+  </action>
+  <action name="o__utf">
+   <property name="text">
+    <string>UTF-8</string>
+   </property>
+  </action>
+  <action name="o__cp">
+   <property name="text">
+    <string>CP949</string>
+   </property>
+  </action>
+  <action name="o__ansi">
+   <property name="text">
+    <string>ANSI</string>
+   </property>
+  </action>
+  <action name="actionDB_OPEN">
+   <property name="text">
+    <string>DB OPEN</string>
+   </property>
+  </action>
+  <action name="actionDB_SAVE">
+   <property name="text">
+    <string>DB SAVE</string>
+   </property>
+  </action>
+  <action name="actionSQL_OPEN">
+   <property name="text">
+    <string>SQL OPEN</string>
+   </property>
+  </action>
+  <action name="actionSQL_SAVE">
+   <property name="text">
+    <string>SQL SAVE</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
