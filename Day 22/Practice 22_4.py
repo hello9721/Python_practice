@@ -292,7 +292,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
                     ex += f"{n} {t} {nn} {dft} {pk}, "
                     cnt += 1
-                print(cnt)
+                    
                 ex = ex[ : len(ex)-2] + " )"
 
                 cmd.execute(ex)
@@ -311,7 +311,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
                         elif type(i[j]) == int: a += (str(i[j]) + ", ")
 
-                    print(a)
+
                     a = a[ : len(a)-2] + ")"
 
                     cmd.execute(a)
