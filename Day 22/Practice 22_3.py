@@ -32,7 +32,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(972, 752)
+        MainWindow.resize(1074, 750)
         
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -44,13 +44,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tbl__view.setFont(font)
         self.tbl__view.setGridStyle(QtCore.Qt.DotLine)
         self.tbl__view.setObjectName("tbl__view")
+        self.tbl__view.setEnabled(False)
 
         self.lst__view = QtWidgets.QListWidget(self.centralwidget)
-        self.lst__view.setGeometry(QtCore.QRect(840, 10, 121, 571))
+        self.lst__view.setGeometry(QtCore.QRect(840, 10, 221, 282))
         self.lst__view.setObjectName("lst__view")
+
+        self.lst__sql = QtWidgets.QListWidget(self.centralwidget)
+        self.lst__sql.setGeometry(QtCore.QRect(840, 300, 221, 282))
+        self.lst__sql.setObjectName("lst__sql")
         
         self.btn__enter = QtWidgets.QPushButton(self.centralwidget)
-        self.btn__enter.setGeometry(QtCore.QRect(840, 590, 121, 51))
+        self.btn__enter.setGeometry(QtCore.QRect(940, 590, 121, 51))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
@@ -58,10 +63,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btn__enter.setObjectName("btn__enter")
         
         self.txt__sql = QtWidgets.QLineEdit(self.centralwidget)
-        self.txt__sql.setGeometry(QtCore.QRect(10, 590, 821, 111))
+        self.txt__sql.setGeometry(QtCore.QRect(10, 590, 921, 111))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
-        font.setPointSize(20)
+        font.setPointSize(15)
         font.setBold(True)
         font.setWeight(75)
         self.txt__sql.setFont(font)
@@ -69,7 +74,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.txt__sql.setObjectName("txt__sql")
         
         self.btn__reset = QtWidgets.QPushButton(self.centralwidget)
-        self.btn__reset.setGeometry(QtCore.QRect(840, 650, 121, 51))
+        self.btn__reset.setGeometry(QtCore.QRect(940, 650, 121, 51))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(12)
@@ -136,13 +141,18 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.txt__sql.returnPressed.connect(self.enter)
         self.btn__enter.clicked.connect(self.enter)
 
+        self.btn__reset.clicked.connect(self.reset)
+
         self.lst__view.clicked.connect(self.load)
+        self.lst__sql.clicked.connect(self.select)
 
         self.db__open.triggered.connect(self.db_open)
         self.db__save.triggered.connect(self.db_save)
 
         self.sql__open.triggered.connect(self.sql_open)
         self.sql__save.triggered.connect(self.sql_save)
+
+        self.s__bar.showMessage("READY")
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
@@ -164,12 +174,12 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tbl__view.setRowCount(self.nrow)
         self.tbl__view.setColumnCount(self.ncol)
 
-        self.cmd.execute(f"select * from PRAGMA_table_info('{self.t_name}')")
-        names = self.cmd.fetchall()
+        self.cmd.execute(line)
+        names = self.cmd.description
 
         col = [0] * self.ncol
 
-        for i in range(self.ncol): col[i] = str(names[i][1]).upper()
+        for i in range(self.ncol): col[i] = str(names[i][0]).upper()
 
         self.tbl__view.setHorizontalHeaderLabels(col)
         self.header = col
@@ -177,6 +187,11 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         for i in range(self.nrow):                
             for j in range(self.ncol):
                 self.tbl__view.setItem(i, j, QtWidgets.QTableWidgetItem(str(self.table[i][j])))
+
+    def select(self):
+
+        temp = self.lst__sql.currentItem().text()
+        self.txt__sql.setText(temp)
 
     def encoding_utf(self):
 
@@ -194,15 +209,17 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         self.s__bar.showMessage("Now Encoding Type => ANSI")
 
-    def path_selector(self):
+    def path_selector(self, exp):
 
-        path = QtWidgets.QFileDialog.getOpenFileName(self, "Select File...", "./", 'Database (*.db);; All File(*)')
+        path = QtWidgets.QFileDialog.getOpenFileName(self, "Select File...", "./", f'{exp};; All File(*)')
 
         return path[0]
     
     def db_open(self):
 
-        path = self.path_selector()
+        self.clear()
+        
+        path = self.path_selector("Database (*.db)")
 
         self.conn = sq.connect(path, isolation_level= None)
         self.cmd = self.conn.cursor()
@@ -218,16 +235,27 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def db_save(self):
 
-        path = self.path_selector()
+        path = self.path_selector("Exel (*.csv)")
 
         f = open(path, "w", encoding = self.encode)
 
-        conn = sq.connect(path)
-        cmd = conn.cursor()
+        header = ""
+        
+        for i in self.header:
 
+            header += i + ", "
+
+        header = header[ : len(temp)-2] + "\n"
+        f.write(header)
         
-        
-        cmd.execute("")
+        for i in self.table:
+
+            temp = ""
+            
+            for j in i: temp += j + ", "
+
+            temp = temp[ : len(temp)-2] + "\n"
+            f.write(temp)
 
         f.close()
 
@@ -235,20 +263,23 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
     def sql_open(self):
 
-        path = self.path_selector()
+        self.lst__sql.clear()
+        self.txt__sql.clear()
+        
+        path = self.path_selector("SQL (*.sql)")
         temp = ""
         
         f = open(path, "r", encoding = self.encode)
         
-        for i in f: temp += i
+        for i in f: self.lst__sql.addItem(i.split("\n")[0])
 
-        self.txt__sql.setText(temp)
+        f.close()
         
         self.s__bar.showMessage("정상적으로 불러왔습니다.")
         
     def sql_save(self):
 
-        path = self.path_selector()
+        path = self.path_selector("Text (*.txt)")
         self.sql_lines.append(self.txt__sql.text())
 
         f = open(path, "w", encoding = self.encode)
@@ -266,6 +297,8 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
             line = self.txt__sql.text()
             
             self.sql_lines.append(line)
+            self.lst__sql.addItem(line)
+            
             self.cmd.execute(line)
 
             lines = line.lower().split()
@@ -280,15 +313,15 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
                 self.tbl__view.setRowCount(self.nrow)
                 self.tbl__view.setColumnCount(self.ncol)
 
-##                self.cmd.execute(f"select * from PRAGMA_table_info('{line}')")
-##                names = self.cmd.fetchall()
-##
-##                col = [0] * self.ncol
-##
-##                for i in range(self.ncol): col[i] = str(names[i][1]).upper()
-##
-##                self.tbl__view.setHorizontalHeaderLabels(col)
-##                self.header = col
+                self.cmd.execute(line)
+                names = self.cmd.description
+
+                col = [0] * self.ncol
+
+                for i in range(self.ncol): col[i] = str(names[i][0]).upper()
+
+                self.tbl__view.setHorizontalHeaderLabels(col)
+                self.header = col
 
                 for i in range(self.nrow):                
                     for j in range(self.ncol):
@@ -303,7 +336,33 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
 
         except:
             
-            ui.s__bar.showMessage("다시 시도해주세요.")
+            self.s__bar.showMessage("다시 시도해주세요.")
+
+    def clear(self):
+
+        self.lst__view.clear()
+        self.lst__sql.clear()
+        self.tbl__view.clear()
+        self.txt__sql.clear()
+
+        self.sql_lines = []
+        self.table = []
+
+        self.t_name = ""
+
+        self.header = []
+
+        self.nrow = 0
+        self.ncol = 0
+
+    def reset(self):
+
+        self.clear()
+
+        self.conn = ""
+        self.cmd = ""
+
+        self.s__bar.showMessage("READY")
 
     def retranslateUi(self, MainWindow):
         
