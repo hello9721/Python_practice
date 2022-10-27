@@ -44,7 +44,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.tbl__view.setFont(font)
         self.tbl__view.setGridStyle(QtCore.Qt.DotLine)
         self.tbl__view.setObjectName("tbl__view")
-        self.tbl__view.setEnabled(False)
 
         self.lst__view = QtWidgets.QListWidget(self.centralwidget)
         self.lst__view.setGeometry(QtCore.QRect(840, 10, 221, 282))
@@ -62,7 +61,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btn__enter.setFont(font)
         self.btn__enter.setObjectName("btn__enter")
         
-        self.txt__sql = QtWidgets.QLineEdit(self.centralwidget)
+        self.txt__sql = QtWidgets.QTextEdit(self.centralwidget)
         self.txt__sql.setGeometry(QtCore.QRect(10, 590, 921, 111))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
@@ -70,7 +69,6 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         font.setBold(True)
         font.setWeight(75)
         self.txt__sql.setFont(font)
-        self.txt__sql.setAlignment(QtCore.Qt.AlignCenter)
         self.txt__sql.setObjectName("txt__sql")
         
         self.btn__reset = QtWidgets.QPushButton(self.centralwidget)
@@ -138,8 +136,10 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.o__utf.triggered.connect(self.encoding_utf)
         self.o__ansi.triggered.connect(self.encoding_ansi)
 
-        self.txt__sql.returnPressed.connect(self.enter)
         self.btn__enter.clicked.connect(self.enter)
+
+        self.btn__enter.setText("Run (Ctrl+F)")
+        self.btn__enter.setShortcut("Ctrl+F")
 
         self.btn__reset.clicked.connect(self.reset)
 
@@ -147,10 +147,14 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.lst__sql.clicked.connect(self.select)
 
         self.db__open.triggered.connect(self.db_open)
+        self.db__open.setShortcut("Ctrl+O")
         self.db__save.triggered.connect(self.db_save)
+        self.db__save.setShortcut("Ctrl+S")
 
         self.sql__open.triggered.connect(self.sql_open)
+        self.sql__open.setShortcut("Shift+O")
         self.sql__save.triggered.connect(self.sql_save)
+        self.sql__save.setShortcut("Shift+S")
 
         self.s__bar.showMessage("READY")
 
@@ -214,87 +218,120 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         path = QtWidgets.QFileDialog.getOpenFileName(self, "Select File...", "./", f'{exp};; All File(*)')
 
         return path[0]
+
+    def save_selector(self, exp):
+
+        path = QtWidgets.QFileDialog.getSaveFileName(self, "Select File...", "./", f'{exp};; All File(*)')
+
+        return path[0]
     
     def db_open(self):
 
-        self.clear()
-        
-        path = self.path_selector("Database (*.db)")
+        try:
 
-        self.conn = sq.connect(path, isolation_level= None)
-        self.cmd = self.conn.cursor()
+            self.clear()
+            
+            path = self.path_selector("Database (*.db);; Exel (*.csv)")
 
-        self.cmd.execute("SELECT name FROM sqlite_master WHERE type='table'")
-        temp = self.cmd.fetchall()
+            self.conn = sq.connect(path, isolation_level= None)
+            self.cmd = self.conn.cursor()
 
-        for i in range(len(temp)):
+            self.cmd.execute("SELECT name FROM sqlite_master WHERE type='table'")
+            temp = self.cmd.fetchall()
 
-            if temp[i][0] != 'sqlite_sequence': self.lst__view.addItem(temp[i][0])
+            for i in range(len(temp)):
 
-        self.s__bar.showMessage("정상적으로 불러왔습니다.")
+                if temp[i][0] != 'sqlite_sequence': self.lst__view.addItem(temp[i][0])
+
+            self.s__bar.showMessage("정상적으로 불러왔습니다.")
+
+        except:
+
+            self.s__bar.showMessage("다시 시도해주세요.")
 
     def db_save(self):
 
-        path = self.path_selector("Exel (*.csv)")
+        try:
 
-        f = open(path, "w", encoding = self.encode)
-
-        header = ""
-        
-        for i in self.header:
-
-            header += i + ", "
-
-        header = header[ : len(temp)-2] + "\n"
-        f.write(header)
-        
-        for i in self.table:
-
-            temp = ""
+            path = self.save_selector("Exel (*.csv)")
             
-            for j in i: temp += j + ", "
+            f = open(path, "w", encoding = self.encode)
 
-            temp = temp[ : len(temp)-2] + "\n"
-            f.write(temp)
+            header = ""
+            
+            for i in self.header:
 
-        f.close()
+                header = header + i + ", "
 
-        self.s__bar.showMessage("정상적으로 저장되었습니다.")
+            header = header[ : len(header)-2] + "\n"
+            f.write(header)
+            
+            for i in self.table:
+
+                temp = ""
+                
+                for j in i: temp = temp + str(j) + ", "
+
+                temp = temp[ : len(temp)-2] + "\n"
+                f.write(temp)
+
+            f.close()
+
+            self.s__bar.showMessage("정상적으로 저장되었습니다.")
+
+        except:
+
+            self.s__bar.showMessage("다시 시도해주세요.")
 
     def sql_open(self):
 
-        self.lst__sql.clear()
-        self.txt__sql.clear()
-        
-        path = self.path_selector("SQL (*.sql)")
-        temp = ""
-        
-        f = open(path, "r", encoding = self.encode)
-        
-        for i in f: self.lst__sql.addItem(i.split("\n")[0])
+        try:
 
-        f.close()
-        
-        self.s__bar.showMessage("정상적으로 불러왔습니다.")
+            self.lst__sql.clear()
+            self.txt__sql.clear()
+            
+            path = self.path_selector("SQL (*.sql);; Text (*.txt)")
+            temp = ""
+            
+            f = open(path, "r", encoding = self.encode)
+            
+            for i in f:
+
+                self.sql_lines.append(i.split("\n")[0])
+                self.lst__sql.addItem(i.split("\n")[0])
+
+            f.close()
+            
+            self.s__bar.showMessage("정상적으로 불러왔습니다.")
+
+        except:
+
+            self.s__bar.showMessage("다시 시도해주세요.")
         
     def sql_save(self):
 
-        path = self.path_selector("Text (*.txt)")
-        self.sql_lines.append(self.txt__sql.text())
+        try:
 
-        f = open(path, "w", encoding = self.encode)
+            path = self.save_selector("Text (*.txt)")
+            self.sql_lines.append(self.txt__sql.toPlainText())
 
-        for i in self.sql_lines: f.write(i + "\n")
+            f = open(path, "w", encoding = self.encode)
 
-        f.close()
+            for i in self.sql_lines: f.write(i + "\n")
 
-        self.s__bar.showMessage("정상적으로 저장되었습니다.")
+            f.close()
+
+            self.s__bar.showMessage("정상적으로 저장되었습니다.")
+
+        except:
+
+            self.s__bar.showMessage("다시 시도해주세요.")
 
     def enter(self):
 
         try:
             
-            line = self.txt__sql.text()
+            line = self.txt__sql.toPlainText()
             
             self.sql_lines.append(line)
             self.lst__sql.addItem(line)
@@ -355,6 +392,9 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.nrow = 0
         self.ncol = 0
 
+        self.tbl__view.setRowCount(self.nrow)
+        self.tbl__view.setColumnCount(self.ncol)
+
     def reset(self):
 
         self.clear()
@@ -368,8 +408,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "SQL Interpreter"))
-        self.btn__enter.setText(_translate("MainWindow", "ENTER"))
-        self.txt__sql.setPlaceholderText(_translate("MainWindow", "SQL INPUT"))
+        self.txt__sql.setPlaceholderText(_translate("MainWindow", "SQL INPUT : "))
         self.btn__reset.setText(_translate("MainWindow", "RESET"))
         self.m__file.setTitle(_translate("MainWindow", "FILE"))
         self.m__db.setTitle(_translate("MainWindow", "DB"))
