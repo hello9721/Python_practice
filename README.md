@@ -430,4 +430,4 @@
     Practice 22_1 - python에서 sqlite 연결하여 사용하기 (sqlite3)
     Practice 22_2 - shell에 SQL INTERPRETER 만들어 DB 테이블 출력하기
     Practice 22_3 - PyQt5를 이용하여 SQL INTERPRETER 만들기
-                    ( 현재 Join 구현 실패 -> 헤더를 표시하도록 생각하니까 복잡해지기에, 일단은 내일 헤더는 제외 하고 완성부터 시켜보기 )
+                    ( 현재 select * 외의 헤더 구현 실패 )
