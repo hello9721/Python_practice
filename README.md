@@ -430,8 +430,9 @@
     Practice 22_1 - python에서 sqlite 연결하여 사용하기 (sqlite3)
     Practice 22_2 - shell에 SQL INTERPRETER 만들어 DB 테이블 출력하기
     Practice 22_3 - PyQt5를 이용하여 SQL INTERPRETER 만들기
-                    ( 현재 select * 외의 헤더 구현 실패 -> 해결 [ cursor.description 사용 ] )
+                    ( 문제점: select * 외의 헤더 구현 실패 -> 해결 [ cursor.description 사용 ] )
     Practice 22_4 - 3에 db 파일로 table 저장, sql 파일로 실행 sql문 저장 기능 추가
+                    ( 문제점: join 사용한 테이블 저장이 안됨. 다른 테이블 요소의 필드 속성들을 가져오지 못해서 생기는 문제.)
 <details>
 <summary> :world_map: </summary>
 
