@@ -438,8 +438,8 @@
 </br>
 
 > Practice 22_4
-> 
-![P22-4](https://user-images.githubusercontent.com/95046369/198199537-c74d021a-3e40-4854-90f2-2654c2fc1d09.gif)
+
+![P22-4](https://user-images.githubusercontent.com/95046369/198199827-ebbb956b-6cca-4f1a-8810-ff611f4ff662.gif)
 
 </details>
 
