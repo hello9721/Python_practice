@@ -32,7 +32,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
     def setupUi(self, MainWindow):
         
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1074, 820)
+        MainWindow.resize(1074, 750)
         
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -62,7 +62,7 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.btn__enter.setObjectName("btn__enter")
         
         self.txt__sql = QtWidgets.QTextEdit(self.centralwidget)
-        self.txt__sql.setGeometry(QtCore.QRect(10, 660, 921, 111))
+        self.txt__sql.setGeometry(QtCore.QRect(10, 590, 921, 111))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(15)
@@ -72,14 +72,13 @@ class Ui_MainWindow(QtWidgets.QMainWindow):
         self.txt__sql.setObjectName("txt__sql")
 
         self.txt__save = QtWidgets.QTextEdit(self.centralwidget)
-        self.txt__save.setGeometry(QtCore.QRect(10, 590, 821, 60))
+        self.txt__save.setGeometry(QtCore.QRect(10, 590, 821, 50))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
-        font.setPointSize(15)
-        font.setBold(True)
+        font.setPointSize(10)
         font.setWeight(75)
-        self.txt__sql.setFont(font)
-        self.txt__sql.setObjectName("txt__sql")
+        self.txt__save.setFont(font)
+        self.txt__save.setObjectName("txt__save")
         
         self.btn__reset = QtWidgets.QPushButton(self.centralwidget)
         self.btn__reset.setGeometry(QtCore.QRect(940, 650, 121, 51))
