@@ -44,7 +44,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab__search">
      <property name="styleSheet">
@@ -62,8 +62,14 @@
         <height>250</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../../Downloads/Ex20221031_1 (1)/output_14_1.png</pixmap>
       </property>
      </widget>
      <widget class="QLineEdit" name="ln__input">
@@ -159,11 +165,16 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">QTabBar::tab { height: 30px; width: 392px; }</string>
+       <string notr="true">QTabBar::tab { height: 30px; width: 261px; }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
+      <widget class="QWidget" name="re__user">
+       <attribute name="title">
+        <string>USER</string>
+       </attribute>
+      </widget>
       <widget class="QWidget" name="re__cham">
        <attribute name="title">
         <string>CHAMPION</string>
