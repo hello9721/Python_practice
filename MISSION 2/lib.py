@@ -1,6 +1,8 @@
 import requests as re
 import sqlite3 as sq
 
+# http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/588.png
+
 class summoner:
 
     api_key = "RGAPI-ad3cc2f9-014c-435a-8ad1-fd7ec6257bd3"
@@ -22,6 +24,8 @@ class summoner:
         self.player_info = request.json()
 
     def load_match_data(self):
+
+        self.process = 0
 
         url = self.region_url + f"lol/match/v5/matches/by-puuid/{self.player_info['puuid']}/ids?start=0&count=80" + "&api_key=" + self.api_key
 
