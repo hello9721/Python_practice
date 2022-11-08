@@ -1,7 +1,7 @@
 import requests as re
 import sqlite3 as sq
 
-# http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/588.png
+# http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/5024.png
 
 class summoner:
 
