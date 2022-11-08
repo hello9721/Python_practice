@@ -448,3 +448,28 @@
 
 #### 22/11/01
     Practice 23_1 - 샘플 Log_data 전처리 및 테이블 형식으로 만들어 데이터베이스 파일로 저장
+
+#
+
+#### 22/11/07 ~ 22/11/10
+    MISSION 2 - MINI PROJECT - CHAMPION SELECTOR (가제)
+                Day 01 - 챔피언 데이터베이스 생성 및 GUI 작성 ( 미완성 ) 그리고 소환사 정보를 가져오는 클래스와 함수 라이브러리 작성 ( 미완성 )
+                         +) 시스템 구성도와 시스템 흐름도 작성
+    
+<details>
+<summary> :world_map: Day 01 - 22/11/07 </summary>
+
+</br>
+
+![Day 1](https://user-images.githubusercontent.com/95046369/200259890-a3b416a4-a197-4c66-bcaf-b95ee4b1bd43.gif)
+
+</br>
+
+![시스템 구성도](https://user-images.githubusercontent.com/95046369/200260080-72ac4595-7eae-4dd0-8e16-1032cf885940.PNG)
+
+</br>
+
+![시스템 흐름도](https://user-images.githubusercontent.com/95046369/200260123-0f68f243-47a1-48a4-8163-64ef899e3fbe.PNG)
+
+
+</details>
