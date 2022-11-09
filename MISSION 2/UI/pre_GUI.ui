@@ -47,7 +47,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab__search">
      <property name="styleSheet">
@@ -217,7 +217,7 @@
        <string notr="true">QTabBar::tab { height: 30px; width: 261px; }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="re__user">
        <attribute name="title">
@@ -1083,7 +1083,7 @@
        <string notr="true">QTabBar::tab { height: 30px; width: 392px; }</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="reco__cham">
        <attribute name="title">
