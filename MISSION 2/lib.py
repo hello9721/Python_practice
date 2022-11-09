@@ -1,7 +1,10 @@
 import requests as re
 import sqlite3 as sq
 
+import random as rn
+
 # http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/5024.png
+# odOuObo
 
 class summoner:
 
@@ -111,12 +114,19 @@ class summoner:
             self.wins = "Unranked"
             self.losses = "Unranked"
 
-        else:
+        elif len(temp) == 2:
 
             self.tier = temp[1]["tier"]
             self.rank = temp[1]["rank"]
             self.wins = temp[1]["wins"]
             self.losses = temp[1]["losses"]
+
+        else:
+
+            self.tier = temp[0]["tier"]
+            self.rank = temp[0]["rank"]
+            self.wins = temp[0]["wins"]
+            self.losses = temp[0]["losses"]
 
     def my_champ(self):
 
@@ -178,3 +188,67 @@ class summoner:
             
             cmd.execute(f'INSERT INTO MY_CHAMPION VALUES ' + i)
             cmd.fetchall()
+
+    def pick_champ(self, lst, key, dif):
+        
+        f = open("./DATA/Champion_Data.csv")
+
+        champ = []
+
+        
+        for i in f:
+
+            if key not in i[0]:
+
+                if lst[2] in i[0]: champ.append(i[0].split("\n")[0].split(","))
+
+        lane_champ = []
+
+        for i in champ:
+
+            if lst[0] == i[4].strip(): lane_champ.append(i)
+
+        pick = []
+
+        for i in lane_champ:
+
+            if i[3].strip() in dif:
+
+                for j in range(len(i)): i[j] = i[j].strip()
+                pick.append(i)
+        for i in pick:
+
+            lane_champ.remove(i)
+        
+
+
+        return lane_champ, pick
+
+        
+    def random_ind(self, pick, champ):
+
+        ind = [[-1,-1]] * 2
+
+        if len(pick) > 2:
+
+            ind[0][0] = rn.randrange(0, len(pick)+1)
+            ind[0][1] = rn.randrange(0, len(pick)+1)
+
+            while ind[0][0] == ind[0][1]:
+
+                ind[0][1] = rn.randrange(0, len(pick)+1)
+
+        elif len(pick) < 2:
+
+            
+            ind[1][0] = rn.randrange(0, len(champ)+1)
+            ind[1][1] = rn.randrange(0, len(champ)+1)
+
+            if len(pick) != 0:
+
+                ind[0][0] = rn.randrange(0, len(pick)+1)
+                ind[1][1] = -1
+
+        else: ind[0][0], ind[0][1] = 0, 1
+
+        return ind

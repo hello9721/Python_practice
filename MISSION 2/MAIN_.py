@@ -3,6 +3,7 @@ from lib import *
 
 from PyQt5.QtGui import QPixmap
 
+
 class connect(Ui_MainWindow, summoner):
 
     best_cnt_chmp = ""
@@ -209,15 +210,13 @@ class connect(Ui_MainWindow, summoner):
 
             idx = pos.index(position[i][0])
 
-            kda = kda[i][0].split("/")
+            kda[i] = kda[i][0].split("/")
 
-            print(kda_lane[idx])
+            kda_lane[idx][0] += int(kda[i][0])
+            kda_lane[idx][1] += int(kda[i][1])
+            kda_lane[idx][2] += int(kda[i][2])
 
-            kda_lane[idx][0] += int(kda[0])
-            kda_lane[idx][1] += int(kda[1])
-            kda_lane[idx][2] += int(kda[2])
-
-        for i in range(6): kda_lane[i] = (kda_lane[i][0] + kda_lane[i][2]) / kda_lane[i][1]
+        for i in range(6): kda_lane[i] = round((kda_lane[i][0] + kda_lane[i][2]) / kda_lane[i][1], 2)
 
         ind2 = kda_lane.index(max(kda_lane[ :-1]))
         best_kda_pos = self.lane[ind2]
@@ -244,23 +243,90 @@ class connect(Ui_MainWindow, summoner):
         print(self.best_cnt_chmp)
         print(self.best_kda_chmp)
 
-        f = open("./DATA/Champion_Data.csv")
+        tier = ["Unranked", "Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"]
+        tier_grade = [0, 0, 0, 1, 1, 1, 2, 2, 2, 2]
+        difficulty = [[0, 1, 2, 3, 4], [4, 5, 6, 7], [7, 8, 9, 10]]
 
-        temp = []
+        n = tier.index(self.tier)
+        n = tier_grade[n]
+        dif = difficulty[n]
 
-        for i in f:
+        cnt_if = self.best_cnt_chmp[5:9]
+        cnt_key = self.best_cnt_chmp[1]
 
-            temp.append(i.split("\n")[0].split(","))
+        cnt_champ, cnt_pick = self.pick_champ(cnt_if, cnt_key, dif)
+        ind = self.random_ind(cnt_pick, cnt_champ)
 
-        temp = temp[1: ]
+        cnt_ind = [""] * 2
+        
+        for i in range(2):
 
-        cnt_tag1 = self.best_cnt_chmp[7]
-        cnt_tag2 = self.best_cnt_chmp[8]
+            for j in ind[i]:
 
-        print(cnt_tag1, cnt_tag2)
+                if i == 0:
+
+                    if j != -1: j = cnt_pick[j]
+
+                elif i == 1:
+
+                    if j != -1: j = cnt_champ[j]
+
+                cnt_ind[i] = j
+
+        kda_if = self.best_kda_chmp[5:9]
+        kda_key = self.best_kda_chmp[1]
+
+        kda_champ, kda_pick = self.pick_champ(kda_if, kda_key, dif)
+        kda_ind = [""] * 2
+        ind = self.random_ind(kda_pick, kda_champ)
 
         
-      
+        chm_data_pos = ["top", "mid", "adc", "support", "jungle", ""]
+
+        cnt_pos = [""] * 2
+        kda_pos = [""] * 2
+
+        for i in range(2):
+
+            for j in ind[i]:
+
+                if i == 0:
+
+                    if j != -1: j = kda_pick[j]
+
+                elif i == 1:
+
+                    if j != -1: j = kda_champ[j]
+
+                kda_ind[i] = j
+
+            cnt_pos[i] = self.lane[chm_data_pos.index(cnt_ind[i][4])]
+            kda_pos[i] = self.lane[chm_data_pos.index(kda_ind[i][4])]
+
+        self.lbl__rcham1_t.setText(cnt_ind[0][1])
+        self.lbl__rcham1_n.setText(cnt_ind[0][2])
+        self.lbl__rcham1_p.setText(f"POSITION | {cnt_pos[0]}")
+        self.lbl__rcham1_d.setText(f"DIFFICULT | {cnt_ind[0][3]}")
+        self.lbl__rcham1.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_ind[0][0]}.png"))
+
+        self.lbl__rcham2_t.setText(cnt_ind[1][1])
+        self.lbl__rcham2_n.setText(cnt_ind[1][2])
+        self.lbl__rcham2_p.setText(f"POSITION | {cnt_pos[1]}")
+        self.lbl__rcham2_d.setText(f"DIFFICULT | {cnt_ind[1][3]}")
+        self.lbl__rcham2.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_ind[1][0]}.png"))
+
+        self.lbl__rcham3_t.setText(kda_ind[0][1])
+        self.lbl__rcham3_n.setText(kda_ind[0][2])
+        self.lbl__rcham3_p.setText(f"POSITION | {kda_pos[0]}")
+        self.lbl__rcham3_d.setText(f"DIFFICULT | {kda_ind[0][3]}")
+        self.lbl__rcham3.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_ind[0][0]}.png"))
+
+        self.lbl__rcham4_t.setText(kda_ind[1][1])
+        self.lbl__rcham4_n.setText(kda_ind[1][2])
+        self.lbl__rcham4_p.setText(f"POSITION | {kda_pos[1]}")
+        self.lbl__rcham4_d.setText(f"DIFFICULT | {kda_ind[1][3]}")
+        self.lbl__rcham4.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_ind[1][0]}.png"))
+
        
 
 if __name__ == "__main__":
