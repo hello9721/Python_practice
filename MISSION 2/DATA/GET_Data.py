@@ -42,13 +42,21 @@ f.close()
 
 for i in range(n):
 
-    temp = ""
+    temp = []
 
     for j in range(len(lane)):
     
-        if KEY[i].upper() in t[j]: temp += lane[j] + " | "
+        if KEY[i].upper() in t[j]:
 
-    LANE[i] = temp[ : len(temp)-3]
+            if len(temp) <= 2:
+
+                temp.append(lane[j])
+
+    if len(temp) == 1:
+
+        temp.append("-")
+
+    LANE[i] = temp
 
 
 for i in range(n): # 서버에서 챔피언별 데이터 가져오기
@@ -77,12 +85,12 @@ f.close()
 
 f = open("./Champion_Data.csv", "w") # 필요 데이터 한파일에 모아 저장
 
-f.write("KEY, TITLE, NAME, DIFFICULTY, LANE, TAG1, TAG2, ATTACK, DEFENSE, MAGIC, IMG, LECTURE\n")
+f.write("KEY, TITLE, NAME, DIFFICULTY, LANE1, LANE2, TAG1, TAG2, ATTACK, DEFENSE, MAGIC, IMG, LECTURE\n")
 
 for i in range(n):
 
-    if len(TAG[i]) == 1: f.write(f"{KEY[i]}, {TITLE[i]}, {NAME[i]}, {DIFFICULTY[i]}, {LANE[i]}, {TAG[i][0]}, -, {ADM[i][0]}, {ADM[i][1]}, {ADM[i][2]}, {URL[i]}, {LECTURE[i]}\n")
-    else: f.write(f"{KEY[i]}, {TITLE[i]}, {NAME[i]}, {DIFFICULTY[i]}, {LANE[i]}, {TAG[i][0]}, {TAG[i][1]}, {ADM[i][0]}, {ADM[i][1]}, {ADM[i][2]}, {URL[i]}, {LECTURE[i]}\n")
+    if len(TAG[i]) == 1: f.write(f"{KEY[i]}, {TITLE[i]}, {NAME[i]}, {DIFFICULTY[i]}, {LANE[i][0]}, {LANE[i][1]}, {TAG[i][0]}, -, {ADM[i][0]}, {ADM[i][1]}, {ADM[i][2]}, {URL[i]}, {LECTURE[i]}\n")
+    else: f.write(f"{KEY[i]}, {TITLE[i]}, {NAME[i]}, {DIFFICULTY[i]}, {LANE[i][0]}, {LANE[i][1]}, {TAG[i][0]}, {TAG[i][1]}, {ADM[i][0]}, {ADM[i][1]}, {ADM[i][2]}, {URL[i]}, {LECTURE[i]}\n")
 
 f.close()
 

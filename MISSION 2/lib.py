@@ -5,16 +5,22 @@ import sqlite3 as sq
 
 class summoner:
 
-    api_key = "RGAPI-ad3cc2f9-014c-435a-8ad1-fd7ec6257bd3"
+    api_key = "RGAPI-c33b4940-b330-49dc-87ea-2923ed1ce7c6"
     platform_url = "https://kr.api.riotgames.com/"
     region_url = "https://asia.api.riotgames.com/"
 
     player_info = ""
+    
+    tier = ""
+    rank = ""
+    wins = 0
+    losses = 0
+    
     match_player_info = []
 
     process = 0
 
-    def __init__(self, name):
+    def input_data(self, name):
 
         self.name = name
 
@@ -23,7 +29,7 @@ class summoner:
         request = re.get(url)
         self.player_info = request.json()
 
-    def load_match_data(self):
+    def load_match_data(self, progressBar):
 
         self.process = 0
 
@@ -31,6 +37,7 @@ class summoner:
 
         request = re.get(url)
         match_ids = request.json()
+        
         cnt = 0
 
         for i in match_ids:
@@ -49,12 +56,13 @@ class summoner:
                         d = temp["info"]["participants"][j]["deaths"]
                         a = temp["info"]["participants"][j]["assists"]
                         
-                        select_data = [0] * 5
+                        select_data = [0] * 6
 
                         select_data[0] = i
                         select_data[1] = temp["info"]["participants"][j]["championName"]
                         select_data[2] = temp["info"]["participants"][j]["teamPosition"]
-                        select_data[4] = temp["info"]["participants"][j]["win"]
+                        select_data[4] = f"{k}/{d}/{a}"
+                        select_data[5] = temp["info"]["participants"][j]["win"]
 
                         if d == 0: select_data[3] = round((k + a) * 1.2, 2)
                         else: select_data[3] = round((k + a)/d, 2)
@@ -62,7 +70,9 @@ class summoner:
                         self.match_player_info.append(select_data)
 
             cnt += 1
-            self.process = cnt * 100 / 80
+            self.process = cnt * 100 / len(match_ids)
+            progressBar.setProperty("value", self.process)
+
             print(self.process)
 
     def update_match_data(self):
@@ -71,9 +81,9 @@ class summoner:
         cmd = conn.cursor()
 
         cmd.execute('''
-            SELECT MATCH_ID FROM MATCH_DATA;
+            DELETE FROM MATCH_DATA
         ''')
-        match_id = cmd.fetchall()
+        cmd.fetchall()
 
         for i in self.match_player_info:
 
@@ -82,7 +92,89 @@ class summoner:
             if i[4] : win = 1
             else: win = 0
 
-            if i[0] not in match_id:
+            cmd.execute(f'INSERT INTO MATCH_DATA VALUES ("{i[0]}", "{i[1]}", "{i[2]}", {i[3]}, "{i[4]}", {win})')
+            cmd.fetchall()
 
-                   cmd.execute(f'INSERT INTO MATCH_DATA VALUES ("{i[0]}", "{i[1]}", "{i[2]}", {i[3]}, {win})')
-                   cmd.fetchall()
+    def tier_data(self):
+
+        id_ = self.player_info["id"]
+
+        url = self.platform_url + f"lol/league/v4/entries/by-summoner/{id_}" + "?api_key=" + self.api_key
+
+        request = re.get(url)
+        temp = request.json()
+
+        if temp == []:
+
+            self.tier = "Unranked"
+            self.rank = ""
+            self.wins = "Unranked"
+            self.losses = "Unranked"
+
+        else:
+
+            self.tier = temp[1]["tier"]
+            self.rank = temp[1]["rank"]
+            self.wins = temp[1]["wins"]
+            self.losses = temp[1]["losses"]
+
+    def my_champ(self):
+
+        conn = sq.connect("./DB/Player_Data.db", isolation_level= None)
+        cmd = conn.cursor()
+
+        cmd.execute('''
+            SELECT CHAMPION FROM MATCH_DATA
+        ''')
+        use_champ = cmd.fetchall()
+
+        for i in range(len(use_champ)):
+
+            use_champ[i] = use_champ[i][0]
+
+        my_champ = list(set(use_champ))
+        my_cnt = [0] * len(my_champ)
+
+        for i in use_champ:
+
+            idx = my_champ.index(i)
+            my_cnt[idx] += 1
+
+        f = open("./DATA/Champion_Data.csv")
+
+        my_champ_info = [""] * len(my_champ)
+        temp = []
+
+        for i in f:
+
+            temp.append(i.split("\n")[0].split(","))
+
+        temp = temp[1: ]
+
+        for i in range(len(my_champ)):
+
+            for j in temp:
+
+                if my_champ[i] == j[0]:
+
+                    my_champ_info[i] = j
+        
+        for i in range(len(my_champ_info)):
+
+            line = f"( {my_cnt[i]}, "
+            
+            for j in my_champ_info[i]:
+
+                line += f'"{j.strip()}", '
+
+            line = line[ :len(line)-2] + " )"
+            
+            my_champ_info[i] = line
+            
+        cmd.execute('DELETE FROM MY_CHAMPION')
+        cmd.fetchall()
+
+        for i in my_champ_info:
+            
+            cmd.execute(f'INSERT INTO MY_CHAMPION VALUES ' + i)
+            cmd.fetchall()

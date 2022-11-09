@@ -18,6 +18,9 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tab__main">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
     <property name="geometry">
      <rect>
       <x>5</x>
@@ -44,7 +47,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab__search">
      <property name="styleSheet">
@@ -57,7 +60,7 @@
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>30</y>
+        <y>20</y>
         <width>350</width>
         <height>250</height>
        </rect>
@@ -79,7 +82,7 @@
       <property name="geometry">
        <rect>
         <x>225</x>
-        <y>330</y>
+        <y>320</y>
         <width>340</width>
         <height>50</height>
        </rect>
@@ -104,7 +107,7 @@
       <property name="geometry">
        <rect>
         <x>230</x>
-        <y>280</y>
+        <y>270</y>
         <width>335</width>
         <height>50</height>
        </rect>
@@ -128,7 +131,7 @@
       <property name="geometry">
        <rect>
         <x>225</x>
-        <y>390</y>
+        <y>380</y>
         <width>340</width>
         <height>30</height>
        </rect>
@@ -172,6 +175,22 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QProgressBar" name="progressBar">
+      <property name="geometry">
+       <rect>
+        <x>225</x>
+        <y>420</y>
+        <width>373</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab__result">
      <attribute name="title">
@@ -198,7 +217,7 @@
        <string notr="true">QTabBar::tab { height: 30px; width: 261px; }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="re__user">
        <attribute name="title">
@@ -262,9 +281,9 @@
        <widget class="QLabel" name="lbl__rate">
         <property name="geometry">
          <rect>
-          <x>350</x>
+          <x>338</x>
           <y>240</y>
-          <width>410</width>
+          <width>420</width>
           <height>130</height>
          </rect>
         </property>
@@ -277,7 +296,7 @@
          </font>
         </property>
         <property name="text">
-         <string>RATE 00%</string>
+         <string>RATE 00.00%</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1064,7 +1083,7 @@
        <string notr="true">QTabBar::tab { height: 30px; width: 392px; }</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="reco__cham">
        <attribute name="title">
