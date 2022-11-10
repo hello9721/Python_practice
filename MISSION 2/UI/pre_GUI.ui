@@ -1268,9 +1268,9 @@
        <widget class="QLabel" name="lbl__rcham1_n">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>19</x>
           <y>320</y>
-          <width>70</width>
+          <width>151</width>
           <height>30</height>
          </rect>
         </property>
@@ -1321,7 +1321,7 @@
          <rect>
           <x>214</x>
           <y>300</y>
-          <width>70</width>
+          <width>151</width>
           <height>30</height>
          </rect>
         </property>
@@ -2037,9 +2037,9 @@
        <widget class="QLabel" name="lbl__rcham5_n">
         <property name="geometry">
          <rect>
-          <x>100</x>
+          <x>118</x>
           <y>320</y>
-          <width>70</width>
+          <width>51</width>
           <height>30</height>
          </rect>
         </property>
@@ -2159,7 +2159,7 @@
          <rect>
           <x>11</x>
           <y>380</y>
-          <width>121</width>
+          <width>171</width>
           <height>30</height>
          </rect>
         </property>

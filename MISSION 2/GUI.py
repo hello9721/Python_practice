@@ -574,7 +574,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham1_t = QtWidgets.QLabel(self.reco__cham)
         self.lbl__rcham1_t.setEnabled(False)
-        self.lbl__rcham1_t.setGeometry(QtCore.QRect(20, 300, 70, 30))
+        self.lbl__rcham1_t.setGeometry(QtCore.QRect(20, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -584,7 +584,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham1_t.setObjectName("lbl__rcham1_t")
         
         self.lbl__rcham1_n = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham1_n.setGeometry(QtCore.QRect(100, 320, 70, 30))
+        self.lbl__rcham1_n.setGeometry(QtCore.QRect(20, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -595,7 +595,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham1_n.setObjectName("lbl__rcham1_n")
         
         self.lbl__rcham2_n = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham2_n.setGeometry(QtCore.QRect(294, 320, 70, 30))
+        self.lbl__rcham2_n.setGeometry(QtCore.QRect(214, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -607,7 +607,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham2_t = QtWidgets.QLabel(self.reco__cham)
         self.lbl__rcham2_t.setEnabled(False)
-        self.lbl__rcham2_t.setGeometry(QtCore.QRect(214, 300, 70, 30))
+        self.lbl__rcham2_t.setGeometry(QtCore.QRect(214, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -617,7 +617,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham2_t.setObjectName("lbl__rcham2_t")
         
         self.lbl__rcham3_n = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham3_n.setGeometry(QtCore.QRect(488, 320, 70, 30))
+        self.lbl__rcham3_n.setGeometry(QtCore.QRect(408, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -629,7 +629,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham3_t = QtWidgets.QLabel(self.reco__cham)
         self.lbl__rcham3_t.setEnabled(False)
-        self.lbl__rcham3_t.setGeometry(QtCore.QRect(408, 300, 70, 30))
+        self.lbl__rcham3_t.setGeometry(QtCore.QRect(408, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -639,7 +639,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham3_t.setObjectName("lbl__rcham3_t")
         
         self.lbl__rcham4_n = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham4_n.setGeometry(QtCore.QRect(682, 320, 70, 30))
+        self.lbl__rcham4_n.setGeometry(QtCore.QRect(602, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -651,7 +651,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham4_t = QtWidgets.QLabel(self.reco__cham)
         self.lbl__rcham4_t.setEnabled(False)
-        self.lbl__rcham4_t.setGeometry(QtCore.QRect(602, 300, 70, 30))
+        self.lbl__rcham4_t.setGeometry(QtCore.QRect(602, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -672,7 +672,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham1_p.setObjectName("lbl__rcham1_p")
         
         self.lbl__rcham1_d = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham1_d.setGeometry(QtCore.QRect(11, 380, 121, 30))
+        self.lbl__rcham1_d.setGeometry(QtCore.QRect(11, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -683,7 +683,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham1_d.setObjectName("lbl__rcham1_d")
         
         self.lbl__rcham2_d = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham2_d.setGeometry(QtCore.QRect(205, 380, 121, 30))
+        self.lbl__rcham2_d.setGeometry(QtCore.QRect(205, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -705,7 +705,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham2_p.setObjectName("lbl__rcham2_p")
         
         self.lbl__rcham3_d = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham3_d.setGeometry(QtCore.QRect(399, 380, 121, 30))
+        self.lbl__rcham3_d.setGeometry(QtCore.QRect(399, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -727,7 +727,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham3_p.setObjectName("lbl__rcham3_p")
         
         self.lbl__rcham4_d = QtWidgets.QLabel(self.reco__cham)
-        self.lbl__rcham4_d.setGeometry(QtCore.QRect(593, 380, 121, 30))
+        self.lbl__rcham4_d.setGeometry(QtCore.QRect(593, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -882,7 +882,7 @@ class Ui_MainWindow(object):
         self.lbl__rbg8.setObjectName("lbl__rbg8")
         
         self.lbl__rcham6_n = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham6_n.setGeometry(QtCore.QRect(294, 320, 70, 30))
+        self.lbl__rcham6_n.setGeometry(QtCore.QRect(214, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -893,7 +893,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham6_n.setObjectName("lbl__rcham6_n")
         
         self.lbl__rcham8_n = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham8_n.setGeometry(QtCore.QRect(682, 320, 70, 30))
+        self.lbl__rcham8_n.setGeometry(QtCore.QRect(602, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -904,7 +904,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham8_n.setObjectName("lbl__rcham8_n")
         
         self.lbl__rcham7_n = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham7_n.setGeometry(QtCore.QRect(488, 320, 70, 30))
+        self.lbl__rcham7_n.setGeometry(QtCore.QRect(408, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -916,7 +916,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham8_t = QtWidgets.QLabel(self.reco__pos)
         self.lbl__rcham8_t.setEnabled(False)
-        self.lbl__rcham8_t.setGeometry(QtCore.QRect(602, 300, 70, 30))
+        self.lbl__rcham8_t.setGeometry(QtCore.QRect(602, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -927,7 +927,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham6_t = QtWidgets.QLabel(self.reco__pos)
         self.lbl__rcham6_t.setEnabled(False)
-        self.lbl__rcham6_t.setGeometry(QtCore.QRect(214, 300, 70, 30))
+        self.lbl__rcham6_t.setGeometry(QtCore.QRect(214, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -937,7 +937,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham6_t.setObjectName("lbl__rcham6_t")
         
         self.lbl__rcham5_n = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham5_n.setGeometry(QtCore.QRect(100, 320, 70, 30))
+        self.lbl__rcham5_n.setGeometry(QtCore.QRect(20, 320, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(13)
@@ -949,7 +949,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham7_t = QtWidgets.QLabel(self.reco__pos)
         self.lbl__rcham7_t.setEnabled(False)
-        self.lbl__rcham7_t.setGeometry(QtCore.QRect(408, 300, 70, 30))
+        self.lbl__rcham7_t.setGeometry(QtCore.QRect(408, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -960,7 +960,7 @@ class Ui_MainWindow(object):
         
         self.lbl__rcham5_t = QtWidgets.QLabel(self.reco__pos)
         self.lbl__rcham5_t.setEnabled(False)
-        self.lbl__rcham5_t.setGeometry(QtCore.QRect(20, 300, 70, 30))
+        self.lbl__rcham5_t.setGeometry(QtCore.QRect(20, 300, 150, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -970,7 +970,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham5_t.setObjectName("lbl__rcham5_t")
         
         self.lbl__rcham6_d = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham6_d.setGeometry(QtCore.QRect(205, 380, 121, 30))
+        self.lbl__rcham6_d.setGeometry(QtCore.QRect(205, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -992,7 +992,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham6_p.setObjectName("lbl__rcham6_p")
         
         self.lbl__rcham5_d = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham5_d.setGeometry(QtCore.QRect(11, 380, 121, 30))
+        self.lbl__rcham5_d.setGeometry(QtCore.QRect(11, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -1025,7 +1025,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham8_p.setObjectName("lbl__rcham8_p")
         
         self.lbl__rcham7_d = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham7_d.setGeometry(QtCore.QRect(399, 380, 121, 30))
+        self.lbl__rcham7_d.setGeometry(QtCore.QRect(399, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)
@@ -1036,7 +1036,7 @@ class Ui_MainWindow(object):
         self.lbl__rcham7_d.setObjectName("lbl__rcham7_d")
         
         self.lbl__rcham8_d = QtWidgets.QLabel(self.reco__pos)
-        self.lbl__rcham8_d.setGeometry(QtCore.QRect(593, 380, 121, 30))
+        self.lbl__rcham8_d.setGeometry(QtCore.QRect(593, 380, 171, 30))
         font = QtGui.QFont()
         font.setFamily("맑은 고딕")
         font.setPointSize(10)

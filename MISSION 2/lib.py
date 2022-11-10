@@ -5,10 +5,11 @@ import random as rn
 
 # http://ddragon.leagueoflegends.com/cdn/12.21.1/img/profileicon/5024.png
 # odOuObo
+# Hide on bush
 
 class summoner:
 
-    api_key = "RGAPI-c33b4940-b330-49dc-87ea-2923ed1ce7c6"
+    api_key = "RGAPI-72893791-2df1-4f8c-ae70-5b9556054381"
     platform_url = "https://kr.api.riotgames.com/"
     region_url = "https://asia.api.riotgames.com/"
 
@@ -42,6 +43,7 @@ class summoner:
         match_ids = request.json()
         
         cnt = 0
+        error = 0
 
         for i in match_ids:
             
@@ -50,30 +52,36 @@ class summoner:
             request = re.get(url)
             temp = request.json()
 
-            for j in range(len(temp["info"]["participants"])):
+            if request.status_code == 200:
 
-                if temp["info"]["gameMode"] == "CLASSIC":
-                    if temp["info"]["participants"][j]["summonerName"] == self.player_info['name']:
+                for j in range(len(temp["info"]["participants"])):
 
-                        k = temp["info"]["participants"][j]["kills"]
-                        d = temp["info"]["participants"][j]["deaths"]
-                        a = temp["info"]["participants"][j]["assists"]
-                        
-                        select_data = [0] * 6
+                    if temp["info"]["gameMode"] == "CLASSIC":
+                        if temp["info"]["participants"][j]["summonerName"] == self.player_info['name']:
 
-                        select_data[0] = i
-                        select_data[1] = temp["info"]["participants"][j]["championName"]
-                        select_data[2] = temp["info"]["participants"][j]["teamPosition"]
-                        select_data[4] = f"{k}/{d}/{a}"
-                        select_data[5] = temp["info"]["participants"][j]["win"]
+                            k = temp["info"]["participants"][j]["kills"]
+                            d = temp["info"]["participants"][j]["deaths"]
+                            a = temp["info"]["participants"][j]["assists"]
+                            
+                            select_data = [0] * 6
 
-                        if d == 0: select_data[3] = round((k + a) * 1.2, 2)
-                        else: select_data[3] = round((k + a)/d, 2)
-                        
-                        self.match_player_info.append(select_data)
+                            select_data[0] = i
+                            select_data[1] = temp["info"]["participants"][j]["championName"]
+                            select_data[2] = temp["info"]["participants"][j]["teamPosition"]
+                            select_data[4] = f"{k}/{d}/{a}"
+                            select_data[5] = temp["info"]["participants"][j]["win"]
+
+                            if d == 0: select_data[3] = round((k + a) * 1.2, 2)
+                            else: select_data[3] = round((k + a)/d, 2)
+                            
+                            self.match_player_info.append(select_data)
+                            
+            else: error += 1
 
             cnt += 1
-            self.process = cnt * 100 / len(match_ids)
+            self.process = cnt * 100 / (len(match_ids) - error)
+
+            if self.process >= 101: self.process = 100
             progressBar.setProperty("value", self.process)
 
             print(self.process)
@@ -189,66 +197,111 @@ class summoner:
             cmd.execute(f'INSERT INTO MY_CHAMPION VALUES ' + i)
             cmd.fetchall()
 
+        f.close()
+
     def pick_champ(self, lst, key, dif):
         
         f = open("./DATA/Champion_Data.csv")
 
         champ = []
-
         
         for i in f:
 
-            if key not in i[0]:
+            if key not in i:
 
-                if lst[2] in i[0]: champ.append(i[0].split("\n")[0].split(","))
+                if lst[2] in i: champ.append(i.split("\n")[0].split(","))
 
         lane_champ = []
 
         for i in champ:
 
-            if lst[0] == i[4].strip(): lane_champ.append(i)
+            if lst[0] == i[4].strip():
+
+                for j in range(len(i)): i[j] = i[j].strip()
+
+                lane_champ.append(i)
 
         pick = []
 
         for i in lane_champ:
 
-            if i[3].strip() in dif:
+            if int(i[3].strip()) in dif:
 
                 for j in range(len(i)): i[j] = i[j].strip()
+                
                 pick.append(i)
+                
         for i in pick:
 
             lane_champ.remove(i)
+
+        f.close()
         
-
-
         return lane_champ, pick
 
+    def pick_lane(self, lane, dif):
+
+        conn = sq.connect("./DB/Player_Data.db", isolation_level= None)
+        cmd = conn.cursor()
+
+        cmd.execute(f'SELECT KEY FROM MY_CHAMPION WHERE LANE1 = "{lane}"')
+        used_champ = cmd.fetchall()
+
+        for i in range(len(used_champ)):
+
+            used_champ[i] = used_champ[i][0]
+
+        f = open("./DATA/Champion_Data.csv")
+
+        pick = []
+        champ = []
+
+        cnt = 0
         
-    def random_ind(self, pick, champ):
+        for i in f:
 
-        ind = [[-1,-1]] * 2
+            temp = i.split("\n")[0].split(",")
 
-        if len(pick) > 2:
+            if cnt != 0:
 
-            ind[0][0] = rn.randrange(0, len(pick)+1)
-            ind[0][1] = rn.randrange(0, len(pick)+1)
+                if temp[0].strip() not in used_champ:
 
-            while ind[0][0] == ind[0][1]:
+                    for j in range(len(temp)): temp[j] = temp[j].strip()
 
-                ind[0][1] = rn.randrange(0, len(pick)+1)
+                    if lane == temp[4]:
 
-        elif len(pick) < 2:
+                        if int(temp[3]) in dif: pick.append(temp)
+                        else: champ.append(temp)
 
-            
-            ind[1][0] = rn.randrange(0, len(champ)+1)
-            ind[1][1] = rn.randrange(0, len(champ)+1)
+            cnt += 1
 
-            if len(pick) != 0:
+        return champ, pick
 
-                ind[0][0] = rn.randrange(0, len(pick)+1)
-                ind[1][1] = -1
+        
+    def random_pick(self, pick, champ):
 
-        else: ind[0][0], ind[0][1] = 0, 1
+        result = []
 
-        return ind
+        n = 2
+
+        random = rn.randrange(1, 5)
+        
+        if len(pick) < 2:
+
+            n = 2 - len(pick)
+
+            for i in range(random): rn.shuffle(champ)
+
+            for i in range(n):
+
+                result.append(champ[i])
+
+            n = len(pick)
+
+        for i in range(random): rn.shuffle(pick)
+        
+        for i in range(n):
+
+            result.append(pick[i])
+
+        return result

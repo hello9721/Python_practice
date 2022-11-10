@@ -3,6 +3,8 @@ from lib import *
 
 from PyQt5.QtGui import QPixmap
 
+# 마이크 바이슨
+
 
 class connect(Ui_MainWindow, summoner):
 
@@ -14,28 +16,37 @@ class connect(Ui_MainWindow, summoner):
 
     total_search_match = 0
     lane = [["탑", "TOP", "Top"], ["미드", "MID", "Mid"], ["원거리 딜러", "BOTTOM", "Bot"], ["서포터", "SUPPORT", "Support"], ["정글", "JUNGLE", "Jungle"]]
+
     
     def setUi(self, MainWindow):
 
         self.setupUi(MainWindow)
 
         self.btn__enter.clicked.connect(self.load_data)
+        self.ln__input.returnPressed.connect(self.load_data)
 
 
     def load_data(self):
 
-        name = self.ln__input.text()
+        try:
 
-        self.input_data(name)
-        self.load_match_data(self.progressBar)
-        self.update_match_data()
+            self.process = 0
 
-        self.show_result_user()
-        self.show_result_champ()
-        self.show_result_lane()
-        self.show_reco_champ()
+            name = self.ln__input.text()
 
+            self.input_data(name)
+            self.load_match_data(self.progressBar)
+            self.update_match_data()
 
+            self.show_result_user()
+            self.show_result_champ()
+            self.show_result_lane()
+            self.show_reco_champ()
+            self.show_reco_lane()
+
+        except: self.statusbar.showMessage("1 ~ 2 분뒤에 다시 시도해주세요.")
+
+        
     def show_result_user(self):
 
         self.tier_data()
@@ -167,7 +178,7 @@ class connect(Ui_MainWindow, summoner):
         self.lbl__fname.setText(f"{best_cnt_champ[0][3]} | {best_cnt_champ[0][1].upper()}")
         self.lbl__fadm.setText(f"ATK {int(best_cnt_champ[0][9]):02d} | DFS {int(best_cnt_champ[0][10]):02d} | MGC {int(best_cnt_champ[0][11]):02d}")
         self.lbl__fd.setText(f"DIFFICULTY {int(best_cnt_champ[0][4]):02d}")
-        self.lbl__fval.setText(f"PLAY COUNT / TOTAL : {best_cnt_champ[0][0]} / {self.total_search_match}")
+        self.lbl__fval.setText(f"PLAY COUNT / TOTAL : {best_cnt_champ[0][0]} / {len(kda)}")
         self.lbl__fcham.setPixmap(QPixmap(f"./ASSETS/CHAM_SHORT/{best_cnt_champ[0][1]}.png"))
 
         self.lbl__bname.setText(f"{best_kda_champ[0][3]} | {best_kda_champ[0][1].upper()}")
@@ -224,7 +235,7 @@ class connect(Ui_MainWindow, summoner):
         if self.tier == "Unranked": tier = "Bronze"
         else: tier = self.tier
 
-        self.lbl__pfval.setText(f"PLAY COUNT / TOTAL : {max(cnt_lane[ :-1])} / {sum(cnt_lane)}")
+        self.lbl__pfval.setText(f"PLAY COUNT / TOTAL : {max(cnt_lane[ :-1])} / {len(position)}")
         self.lbl__pfname.setText(f"{best_cnt_pos[0]} | {best_cnt_pos[1]}")
         self.lbl__fpos.setPixmap(QPixmap(f"./ASSETS/POSITION/Position_{tier}-{best_cnt_pos[2]}.png"))
 
@@ -240,9 +251,6 @@ class connect(Ui_MainWindow, summoner):
 
     def show_reco_champ(self):
 
-        print(self.best_cnt_chmp)
-        print(self.best_kda_chmp)
-
         tier = ["Unranked", "Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"]
         tier_grade = [0, 0, 0, 1, 1, 1, 2, 2, 2, 2]
         difficulty = [[0, 1, 2, 3, 4], [4, 5, 6, 7], [7, 8, 9, 10]]
@@ -255,32 +263,14 @@ class connect(Ui_MainWindow, summoner):
         cnt_key = self.best_cnt_chmp[1]
 
         cnt_champ, cnt_pick = self.pick_champ(cnt_if, cnt_key, dif)
-        ind = self.random_ind(cnt_pick, cnt_champ)
-
-        cnt_ind = [""] * 2
-        
-        for i in range(2):
-
-            for j in ind[i]:
-
-                if i == 0:
-
-                    if j != -1: j = cnt_pick[j]
-
-                elif i == 1:
-
-                    if j != -1: j = cnt_champ[j]
-
-                cnt_ind[i] = j
+        cnt_result = self.random_pick(cnt_pick, cnt_champ)
 
         kda_if = self.best_kda_chmp[5:9]
         kda_key = self.best_kda_chmp[1]
 
         kda_champ, kda_pick = self.pick_champ(kda_if, kda_key, dif)
-        kda_ind = [""] * 2
-        ind = self.random_ind(kda_pick, kda_champ)
+        kda_result = self.random_pick(kda_pick, kda_champ)
 
-        
         chm_data_pos = ["top", "mid", "adc", "support", "jungle", ""]
 
         cnt_pos = [""] * 2
@@ -288,46 +278,91 @@ class connect(Ui_MainWindow, summoner):
 
         for i in range(2):
 
-            for j in ind[i]:
+            cnt_pos[i] = self.lane[chm_data_pos.index(cnt_result[i][4])][1]
+            kda_pos[i] = self.lane[chm_data_pos.index(kda_result[i][4])][1]
 
-                if i == 0:
-
-                    if j != -1: j = kda_pick[j]
-
-                elif i == 1:
-
-                    if j != -1: j = kda_champ[j]
-
-                kda_ind[i] = j
-
-            cnt_pos[i] = self.lane[chm_data_pos.index(cnt_ind[i][4])]
-            kda_pos[i] = self.lane[chm_data_pos.index(kda_ind[i][4])]
-
-        self.lbl__rcham1_t.setText(cnt_ind[0][1])
-        self.lbl__rcham1_n.setText(cnt_ind[0][2])
+        self.lbl__rcham1_t.setText(cnt_result[0][1])
+        self.lbl__rcham1_n.setText(cnt_result[0][2])
         self.lbl__rcham1_p.setText(f"POSITION | {cnt_pos[0]}")
-        self.lbl__rcham1_d.setText(f"DIFFICULT | {cnt_ind[0][3]}")
-        self.lbl__rcham1.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_ind[0][0]}.png"))
+        self.lbl__rcham1_d.setText(f"DIFFICULT | {int(cnt_result[0][3]):02d}")
+        self.lbl__rcham1.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_result[0][0]}.png"))
 
-        self.lbl__rcham2_t.setText(cnt_ind[1][1])
-        self.lbl__rcham2_n.setText(cnt_ind[1][2])
+        self.lbl__rcham2_t.setText(cnt_result[1][1])
+        self.lbl__rcham2_n.setText(cnt_result[1][2])
         self.lbl__rcham2_p.setText(f"POSITION | {cnt_pos[1]}")
-        self.lbl__rcham2_d.setText(f"DIFFICULT | {cnt_ind[1][3]}")
-        self.lbl__rcham2.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_ind[1][0]}.png"))
+        self.lbl__rcham2_d.setText(f"DIFFICULT | {int(cnt_result[1][3]):02d}")
+        self.lbl__rcham2.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_result[1][0]}.png"))
 
-        self.lbl__rcham3_t.setText(kda_ind[0][1])
-        self.lbl__rcham3_n.setText(kda_ind[0][2])
+        self.lbl__rcham3_t.setText(kda_result[0][1])
+        self.lbl__rcham3_n.setText(kda_result[0][2])
         self.lbl__rcham3_p.setText(f"POSITION | {kda_pos[0]}")
-        self.lbl__rcham3_d.setText(f"DIFFICULT | {kda_ind[0][3]}")
-        self.lbl__rcham3.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_ind[0][0]}.png"))
+        self.lbl__rcham3_d.setText(f"DIFFICULT | {int(kda_result[0][3]):02d}")
+        self.lbl__rcham3.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_result[0][0]}.png"))
 
-        self.lbl__rcham4_t.setText(kda_ind[1][1])
-        self.lbl__rcham4_n.setText(kda_ind[1][2])
+        self.lbl__rcham4_t.setText(kda_result[1][1])
+        self.lbl__rcham4_n.setText(kda_result[1][2])
         self.lbl__rcham4_p.setText(f"POSITION | {kda_pos[1]}")
-        self.lbl__rcham4_d.setText(f"DIFFICULT | {kda_ind[1][3]}")
-        self.lbl__rcham4.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_ind[1][0]}.png"))
+        self.lbl__rcham4_d.setText(f"DIFFICULT | {int(kda_result[1][3]):02d}")
+        self.lbl__rcham4.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_result[1][0]}.png"))
 
-       
+        self.lbl__link1.setText(f"<a href = \"{cnt_result[0][-1]}\">🔗</a>")
+        self.lbl__link2.setText(f"<a href = \"{cnt_result[1][-1]}\">🔗</a>")
+        self.lbl__link3.setText(f"<a href = \"{kda_result[0][-1]}\">🔗</a>")
+        self.lbl__link4.setText(f"<a href = \"{kda_result[1][-1]}\">🔗</a>")
+        
+
+    def show_reco_lane(self):
+
+        tier = ["Unranked", "Iron", "Bronze", "Silver", "Gold", "Platinum", "Diamond", "Master", "Grandmaster", "Challenger"]
+        tier_grade = [0, 0, 0, 1, 1, 1, 2, 2, 2, 2]
+        difficulty = [[0, 1, 2, 3, 4], [4, 5, 6, 7], [7, 8, 9, 10]]
+
+        n = tier.index(self.tier)
+        n = tier_grade[n]
+        dif = difficulty[n]
+
+        cnt_lane = self.best_cnt_lane
+        kda_lane = self.best_kda_lane
+
+        cnt_champ, cnt_pick = self.pick_lane(cnt_lane, dif)
+        kda_champ, kda_pick = self.pick_lane(kda_lane, dif)
+
+        cnt_result = self.random_pick(cnt_pick, cnt_champ)
+        kda_result = self.random_pick(kda_pick, kda_champ)
+
+        chm_data_pos = ["top", "mid", "adc", "support", "jungle", ""]
+
+        cnt_pos = self.lane[chm_data_pos.index(cnt_lane)][1]
+        kda_pos = self.lane[chm_data_pos.index(kda_lane)][1]
+
+        self.lbl__rcham5_t.setText(cnt_result[0][1])
+        self.lbl__rcham5_n.setText(cnt_result[0][2])
+        self.lbl__rcham5_p.setText(f"POSITION | {cnt_pos}")
+        self.lbl__rcham5_d.setText(f"DIFFICULT | {int(cnt_result[0][3]):02d}")
+        self.lbl__rcham5.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_result[0][0]}.png"))
+
+        self.lbl__rcham6_t.setText(cnt_result[1][1])
+        self.lbl__rcham6_n.setText(cnt_result[1][2])
+        self.lbl__rcham6_p.setText(f"POSITION | {cnt_pos}")
+        self.lbl__rcham6_d.setText(f"DIFFICULT | {int(cnt_result[1][3]):02d}")
+        self.lbl__rcham6.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{cnt_result[1][0]}.png"))
+
+        self.lbl__rcham7_t.setText(kda_result[0][1])
+        self.lbl__rcham7_n.setText(kda_result[0][2])
+        self.lbl__rcham7_p.setText(f"POSITION | {kda_pos}")
+        self.lbl__rcham7_d.setText(f"DIFFICULT | {int(kda_result[0][3]):02d}")
+        self.lbl__rcham7.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_result[0][0]}.png"))
+
+        self.lbl__rcham8_t.setText(kda_result[1][1])
+        self.lbl__rcham8_n.setText(kda_result[1][2])
+        self.lbl__rcham8_p.setText(f"POSITION | {kda_pos}")
+        self.lbl__rcham8_d.setText(f"DIFFICULT | {int(kda_result[1][3]):02d}")
+        self.lbl__rcham8.setPixmap(QPixmap(f"./ASSETS/CHAM_LONG/{kda_result[1][0]}.png"))
+
+        self.lbl__link8.setText(f"<a href = \"{cnt_result[0][-1]}\">🔗</a>")
+        self.lbl__link6.setText(f"<a href = \"{cnt_result[1][-1]}\">🔗</a>")
+        self.lbl__link5.setText(f"<a href = \"{kda_result[0][-1]}\">🔗</a>")
+        self.lbl__link7.setText(f"<a href = \"{kda_result[1][-1]}\">🔗</a>")
 
 if __name__ == "__main__":
     
