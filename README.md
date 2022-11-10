@@ -456,7 +456,8 @@
                 Day 01 - 챔피언 데이터베이스 생성 및 GUI 작성 ( 미완성 ) 그리고 소환사 정보를 가져오는 클래스와 함수 라이브러리 작성 ( 미완성 )
                          +) 시스템 구성도와 시스템 흐름도 작성
                 Day 02 - GUI 완성 및 데이터베이스 완성, 이미지 소스 수집
-                Day 03 - GUI와 라이브러리, 데이터베이스를 토대로 코드 작성 -> 라인별 average kda 이후 
+                Day 03 - GUI와 라이브러리, 데이터베이스를 토대로 코드 작성 -> 라인별 average kda 이후
+                Day 04 - 코드 작성 마무리 -> 자꾸 19% 가량에서 렉이 걸리는데 작동되는데 큰영향을 끼치지는 않는다.
     
 <details>
 <summary> :world_map: Day 01 - 22/11/07 </summary>
@@ -487,11 +488,10 @@
 </details>
 
 <details>
-<summary> :world_map: Day 03 - 22/11/09 </summary>
+<summary> :world_map: Day 03 ~ 04 - 22/11/09 ~ 22/11/10 </summary>
 
 </br>
 
-
-
+![Day 4](https://user-images.githubusercontent.com/95046369/201012137-613a3eab-3aae-412f-9912-d72ff384a96f.gif)
 
 </details>
