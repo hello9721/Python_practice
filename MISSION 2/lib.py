@@ -43,7 +43,6 @@ class summoner:
         match_ids = request.json()
         
         cnt = 0
-        error = 0
 
         for i in match_ids:
             
@@ -52,34 +51,33 @@ class summoner:
             request = re.get(url)
             temp = request.json()
 
-            if request.status_code == 200:
 
-                for j in range(len(temp["info"]["participants"])):
+            for j in range(len(temp["info"]["participants"])):
 
-                    if temp["info"]["gameMode"] == "CLASSIC":
-                        if temp["info"]["participants"][j]["summonerName"] == self.player_info['name']:
+                if temp["info"]["gameMode"] == "CLASSIC":
+                    if temp["info"]["participants"][j]["summonerName"] == self.player_info['name']:
 
-                            k = temp["info"]["participants"][j]["kills"]
-                            d = temp["info"]["participants"][j]["deaths"]
-                            a = temp["info"]["participants"][j]["assists"]
+                        k = temp["info"]["participants"][j]["kills"]
+                        d = temp["info"]["participants"][j]["deaths"]
+                        a = temp["info"]["participants"][j]["assists"]
+                        
+                        select_data = [0] * 6
+
+                        select_data[0] = i
+                        select_data[1] = temp["info"]["participants"][j]["championName"]
+                        select_data[2] = temp["info"]["participants"][j]["teamPosition"]
+                        select_data[4] = f"{k}/{d}/{a}"
+                        select_data[5] = temp["info"]["participants"][j]["win"]
+
+                        if d == 0: select_data[3] = round((k + a) * 1.2, 2)
+                        else: select_data[3] = round((k + a)/d, 2)
+                        
+                        self.match_player_info.append(select_data)
                             
-                            select_data = [0] * 6
-
-                            select_data[0] = i
-                            select_data[1] = temp["info"]["participants"][j]["championName"]
-                            select_data[2] = temp["info"]["participants"][j]["teamPosition"]
-                            select_data[4] = f"{k}/{d}/{a}"
-                            select_data[5] = temp["info"]["participants"][j]["win"]
-
-                            if d == 0: select_data[3] = round((k + a) * 1.2, 2)
-                            else: select_data[3] = round((k + a)/d, 2)
-                            
-                            self.match_player_info.append(select_data)
-                            
-            else: error += 1
+            
 
             cnt += 1
-            self.process = cnt * 100 / (len(match_ids) - error)
+            self.process = cnt * 100 / len(match_ids)
             
             progressBar.setProperty("value", self.process)
 
