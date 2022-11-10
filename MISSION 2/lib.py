@@ -80,8 +80,7 @@ class summoner:
 
             cnt += 1
             self.process = cnt * 100 / (len(match_ids) - error)
-
-            if self.process >= 101: self.process = 100
+            
             progressBar.setProperty("value", self.process)
 
             print(self.process)
