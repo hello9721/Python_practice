@@ -9,3 +9,11 @@
 
 # django-admin.py startproject {projectName} {projectDirectory}
 # 프로젝트 생성
+
+# setting.py 의 host를 127.0.0.1 로 변경
+
+# Project가 생성된 폴더에서 >
+# python manage.py migrate
+# python manage.py runserver
+
+# 로컬 서버 실행
