@@ -495,3 +495,9 @@
 ![Day 4](https://user-images.githubusercontent.com/95046369/201012137-613a3eab-3aae-412f-9912-d72ff384a96f.gif)
 
 </details>
+
+#
+#### 22/11/15
+    Practice 24_1 - Django - 가상환경 생성과 프로젝트 생성
+
+#
