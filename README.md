@@ -495,3 +495,17 @@
 ![Day 4](https://user-images.githubusercontent.com/95046369/201012137-613a3eab-3aae-412f-9912-d72ff384a96f.gif)
 
 </details>
+
+#
+#### 22/11/15
+    Practice 24_1 - Django - 가상환경 생성과 프로젝트 생성
+
+#
+#### 22/11/16
+    Practice 25_1 - Django - 유저 생성 및 관리 , 모델 작성 및 적용
+
+#
+#### 22/11/22
+    Practice 26_1 - Django - 모델 작성 및 적용, 데이터 추가
+
+#
