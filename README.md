@@ -506,6 +506,7 @@
 
 #
 #### 22/11/22
-    Practice 26_1 - Django - 모델 작성 및 적용, 데이터 추가
+    Practice 26_1 - Django - 모델 작성 및 적용, 데이터 추가,
+                    새로운 페이지 주소에 app 연결 및 html, css 연동
 
 #
