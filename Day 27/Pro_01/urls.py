@@ -18,6 +18,13 @@ from django.urls import path
 from Pro_02 import views
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
-    path('blog/', views.sub)
+
+    path('', views.home),
+    path('me/', views.intro),
+    path('skill/', views.skill),
+    path('project/', views.project),
+    path('project/calculator/', views.calculator)
+    
 ]

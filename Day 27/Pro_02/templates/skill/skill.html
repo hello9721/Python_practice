@@ -1,0 +1,139 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P O R T F O L I O</title>
+
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script defer src="{% static 'javascript/common.js' %}"></script>
+    <script defer>window.onload = function () {btn()}</script>
+</head>
+
+<body>
+    <header>
+        <div class="inner">
+            <table class="menu">
+                <tr class="home" onclick="getVal('home')">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        <a href="/">
+                            <span class="material-icons md-48">
+                                other_houses
+                            </span>
+                            <span class="menu__txt">
+                                <br>
+                                home
+                                <br>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="intro" onclick="getVal('intro')">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        <a href="../me/">
+                            <span class="material-icons md-48">
+                                badge
+                            </span>
+                            <span class="menu__txt">
+                                <br>
+                                profile
+                                <br>
+                            </span>
+                        </a>
+                    </td>                    
+                </tr>
+                <tr class="skill" onclick="getVal('skill')">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        <a href="../skill/">
+                            <span class="material-icons md-48">
+                                layers
+                            </span>
+                            <span class="menu__txt">
+                                <br>
+                                skills
+                                <br>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+                <tr class="project" onclick="getVal('project')">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        <a href="../project/">
+                            <span class="material-icons md-48">
+                                local_movies
+                            </span>
+                            <span class="menu__txt">
+                                <br>
+                                projects
+                                <br>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+            <table class="light">
+                <tr class="home active">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        ●
+                    </td>
+                </tr>
+                <tr class="intro active">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        ●
+                    </td>
+                </tr>
+                <tr class="skill active select">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        ●
+                    </td>
+                </tr>
+                <tr class="project active">
+                    <td class="menu__blank"></td>
+                    <td class="menu__content">
+                        ●
+                    </td>
+                </tr>
+            </table>
+            <table class="btn" onclick="btn()">
+                <tr>
+                    <td class="btn__hide btn__area">
+                        <span class="material-symbols-outlined">
+                            arrow_back_ios
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btn__show btn__area">
+                        <span class="material-symbols-outlined">
+                            arrow_forward_ios
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="btn__showText">
+                        <div>
+                            MENU
+                        </div> 
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+    </header>
+</body>
+
+</html>
