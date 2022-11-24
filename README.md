@@ -510,3 +510,7 @@
                     새로운 페이지 주소에 app 연결 및 html, css 연동
 
 #
+#### 22/11/23 ~ 22/11/24
+    Practice 27_1 - Django - 여러개의 url 연결, html, css, javascript, images 연동
+
+#
