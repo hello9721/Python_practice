@@ -1,0 +1,76 @@
+02:39 ~ $ pwd										# 현재 디렉토리 표시
+/home/hello9721
+
+02:41 ~ $ ls -al									# 현재 폴더의 모든 파일 표시
+total 48
+drwxrwxr-x 5 hello9721 registered_users 4096 Nov 29 02:39 .
+drwxr-xr-x 1         0                0 4096 Nov 29 02:39 ..
+-rwxr-xr-x 1 hello9721 registered_users  559 Nov 29 01:15 .bashrc
+drwxrwxr-x 3 hello9721 registered_users 4096 Nov 29 02:39 .cache
+-rwxr-xr-x 1 hello9721 registered_users  266 Nov 29 01:15 .gitconfig
+drwxrwxr-x 3 hello9721 registered_users 4096 Nov 29 01:15 .local
+-rw-r--r-- 1 hello9721 registered_users   79 Nov 29 01:15 .profile
+-rwxr-xr-x 1 hello9721 registered_users   77 Nov 29 01:15 .pythonstartup.py
+-rwxr-xr-x 1 hello9721 registered_users 4693 Nov 29 01:15 .vimrc
+drwxrwxr-x 2 hello9721 registered_users 4096 Nov 29 02:39 .virtualenvs
+-rwxr-xr-x 1 hello9721 registered_users  232 Nov 29 01:15 README.txt
+
+02:54 ~ $ python -m venv env								# 파이썬 가상환경 생성
+
+02:55 ~ $ ls
+README.txt  env
+03:00 ~ $ ls -al env
+total 24
+drwxrwxr-x 5 hello9721 registered_users 4096 Nov 29 02:54 .
+drwxrwxr-x 6 hello9721 registered_users 4096 Nov 29 02:54 ..
+drwxrwxr-x 2 hello9721 registered_users 4096 Nov 29 02:55 bin
+drwxrwxr-x 2 hello9721 registered_users 4096 Nov 29 02:54 include
+drwxrwxr-x 3 hello9721 registered_users 4096 Nov 29 02:54 lib
+lrwxrwxrwx 1 hello9721 registered_users    3 Nov 29 02:54 lib64 -> lib
+-rw-rw-r-- 1 hello9721 registered_users   88 Nov 29 02:54 pyvenv.cfg
+03:01 ~ $ ls -al env/bin
+total 44
+drwxrwxr-x 2 hello9721 registered_users 4096 Nov 29 02:55 .
+drwxrwxr-x 5 hello9721 registered_users 4096 Nov 29 02:54 ..
+-rw-r--r-- 1 hello9721 registered_users 9033 Nov 29 02:55 Activate.ps1
+-rw-r--r-- 1 hello9721 registered_users 1984 Nov 29 02:55 activate
+-rw-r--r-- 1 hello9721 registered_users  910 Nov 29 02:55 activate.csh
+-rw-r--r-- 1 hello9721 registered_users 2052 Nov 29 02:55 activate.fish
+-rwxrwxr-x 1 hello9721 registered_users  235 Nov 29 02:55 pip
+-rwxrwxr-x 1 hello9721 registered_users  235 Nov 29 02:55 pip3
+-rwxrwxr-x 1 hello9721 registered_users  235 Nov 29 02:55 pip3.10
+lrwxrwxrwx 1 hello9721 registered_users   33 Nov 29 02:54 python -> /home/hello9721/.local/bin/python
+lrwxrwxrwx 1 hello9721 registered_users    6 Nov 29 02:54 python3 -> python
+lrwxrwxrwx 1 hello9721 registered_users    6 Nov 29 02:54 python3.10 -> python
+
+03:05 ~ $ cd env/bin
+03:05 ~/env/bin $ source activate							# 가상환경 실행
+
+(env) 03:05 ~/env/bin $  python -m pip install --upgrade pip				# pip 업그레이드
+Looking in links: /usr/share/pip-wheels
+Requirement already satisfied: pip in /home/hello9721/env/lib/python3.10/site-packages (22.0.4)
+Collecting pip
+  Downloading pip-22.3.1-py3-none-any.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 14.9 MB/s eta 0:00:00
+Installing collected packages: pip
+  Attempting uninstall: pip
+    Found existing installation: pip 22.0.4
+    Uninstalling pip-22.0.4:
+      Successfully uninstalled pip-22.0.4
+Successfully installed pip-22.3.
+
+(env) 03:13 ~/env/bin $ python -m pip install django~=2.0.0       			# django 라이브러리 설치                                                                                                                                               
+Looking in links: /usr/share/pip-wheels
+Collecting django~=2.0.0
+  Downloading Django-2.0.13-py3-none-any.whl (7.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 6.9 MB/s eta 0:00:00
+Collecting pytz
+  Downloading pytz-2022.6-py2.py3-none-any.whl (498 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 498.1/498.1 kB 6.0 MB/s eta 0:00:00
+Installing collected packages: pytz, django
+Successfully installed django-2.0.13 pytz-2022.6
+
+(env) 03:18 ~/env $ mkdir project							# dir 만들기
+(env) 03:18 ~/env $ ls
+bin  include  lib  lib64  project  pyvenv.cfg
+(env) 03:18 ~/env $ cd project
