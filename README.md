@@ -1,5 +1,6 @@
 ## 한국 IT 전문 학원 - S/W 및 빅데이터 지역 인재 양성 과정 - Python
-
+### [Pygame Project](https://github.com/hello9721/Pygame_Project)
+#
 #### 22/08/23 
     Practice 1 - input()과 print()를 이용한 주급 계산기 작성해보기 
 <details>
@@ -512,5 +513,9 @@
 #
 #### 22/11/23 ~ 22/11/24
     Practice 27_1 - Django - 여러개의 url 연결, html, css, javascript, images 연동
+
+#
+#### 22/11/29
+    Practice 28_1 - PythonAnywhere - Bash Console에서의 Python 가상환경
 
 #
