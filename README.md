@@ -515,3 +515,7 @@
     Practice 27_1 - Django - 여러개의 url 연결, html, css, javascript, images 연동
 
 #
+#### 22/11/29
+    Practice 28_1 - PythonAnywhere - Bash Console에서의 Python 가상환경
+
+#
