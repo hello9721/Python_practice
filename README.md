@@ -522,6 +522,14 @@
 #### 22/11/30
     Practice 29_1 - PythonAnywhere - zip 업로드 및 압축 해제를 통한 데이터 전송 / Webapp 활성화
 
+<details>
+<summary> :world_map: </summary>
+
+</br>
+
 [Day 29](http://hello9721.pythonanywhere.com/)
+
+</details>
+
 
 #
