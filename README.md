@@ -516,6 +516,12 @@
 
 #
 #### 22/11/29
-    Practice 28_1 - PythonAnywhere - Bash Console에서의 Python 가상환경
+    Practice 28_1 - PythonAnywhere - Bash Console에서의 Python 가상환경 / git clone을 통한 데이터 전송
+
+#
+#### 22/11/30
+    Practice 29_1 - PythonAnywhere - zip 업로드 및 압축 해제를 통한 데이터 전송 / Webapp 활성화
+
+[Day 29](http://hello9721.pythonanywhere.com/)
 
 #
