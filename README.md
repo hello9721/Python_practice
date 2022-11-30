@@ -521,6 +521,7 @@
 #
 #### 22/11/30
     Practice 29_1 - PythonAnywhere - zip 업로드 및 압축 해제를 통한 데이터 전송 / Webapp 활성화
+    Practice 29_2 - Django - Model / DB 에 있는 데이터를 html로 연결
 
 <details>
 <summary> :world_map: </summary>
@@ -529,6 +530,10 @@
 
 [Day 29](http://hello9721.pythonanywhere.com/)
 ~ Tuesday 28 February 2023
+
+<br>
+
+[Django_Webapp](https://github.com/hello9721/Django_Webapp)
 
 </details>
 
