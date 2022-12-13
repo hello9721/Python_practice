@@ -130,6 +130,7 @@ def data_to_DB(lst, cst):                           # 리스트 형식으로 들
 
 # 테스트 실행 코드
 # vFcst = 단기예보 / sFcst = 초단기예보 / sNcst = 초단기실황
+
 # vf_lst = get_data('vFcst')
 # sf_lst = get_data('sFcst')
 # sn_lst = get_data('sNcst')
