@@ -4,6 +4,8 @@ import requests as req
 import sqlite3 as sql
 # lxml 라이브러리 인스톨 하기
 
+from LOC_TO_XY import *
+
 def get_now():                      # 현재 시간을 필요한 포맷으로 반환
                                     # 데이터를 가져오는 시간에 따라 가장 최근 예보 데이터를 가져올 수 있도록 한다.
     now = dt.now()
@@ -48,7 +50,9 @@ def get_data(cst):                                  # api에서 데이터 가져
     date, gf_time, sn_time, sf_time = get_now()
 
     api_key = "%2FsB%2B4nyywlmejmA0rBxb02w%2BxrxK3P17tIQb5iDWiPsMOB1Hzpm%2BvNDN%2BYg2pBtldu9aDkNHZ9N9KKGGgf6BCw%3D%3D"
-    x, y = 55, 127                                  # 이후 업데이트를 통해 지역정보DB에서 가져올 수 있도록 한다.
+
+    lat, lng = ip_to_loc()                          # ip 주소에 따른 위도, 경도 값 받아오기
+    address, x, y = loc_to_xy(lat, lng)             # 주소, x, y 값 받아오기
                                                     # 요청된 cst에 따라 api에서 가져오는 데이터가 다르도록 지정.
     if cst == "vFcst": url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey={api_key}&pageNo=1&numOfRows=1000&dataType=XML&base_date={date}&base_time={gf_time + '00'}&nx={x}&ny={y}"
     elif cst == "sFcst": url = f"https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst?serviceKey={api_key}&pageNo=1&numOfRows=1000&dataType=XML&base_date={date}&base_time={sf_time + '30'}&nx={x}&ny={y}"
@@ -56,6 +60,8 @@ def get_data(cst):                                  # api에서 데이터 가져
 
     result = req.get(url, verify = False)
     soup = b(result.text, 'lxml')
+
+    print(address)                                  # 추후 주소 사용할때 수정할 부분
 
     items = soup.find_all('item')
 
@@ -121,3 +127,13 @@ def data_to_DB(lst, cst):                           # 리스트 형식으로 들
         cmd.execute(query)
         cmd.fetchall()
         con.commit()
+
+# 테스트 실행 코드
+# vFcst = 단기예보 / sFcst = 초단기예보 / sNcst = 초단기실황
+# vf_lst = get_data('vFcst')
+# sf_lst = get_data('sFcst')
+# sn_lst = get_data('sNcst')
+
+# data_to_DB(vf_lst, 'vFcst')
+# data_to_DB(sf_lst, 'sFcst')
+# data_to_DB(sn_lst, 'sNcst')
