@@ -539,8 +539,9 @@
 
 
 #
-#### 22/12/12 ~ 22/12/16
-    MINI PROJECT - 날씨 정보 웹사이트 ( Django 활용 ) -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project)
+#### 22/12/12 ~ 22/12/16 -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project)
+    MINI PROJECT - 날씨 정보 웹사이트 ( Django 활용 )
+    
                 Day 01 - 임의의 x, y 좌표를 이용하여 API에서 해당 위치 날씨 데이터를 받아 날씨정보DB에 저장하는 코드 작성
                 
                 Day 02 - Google Geolocation API를 이용하여 접속 IP를 통해 위도, 경도를 얻어
