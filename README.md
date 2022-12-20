@@ -539,7 +539,7 @@
 
 
 #
-#### 22/12/12 ~ 22/12/16 -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project) & [PythonAnywhere Page](http://hello9721.pythonanywhere.com/)
+#### 22/12/12 ~ 22/12/14 & 22/12/19 ~ 22/12/20 -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project) & [PythonAnywhere Page](http://hello9721.pythonanywhere.com/)
     MINI PROJECT - 날씨 정보 웹사이트 ( Django 활용 )
     
                 Day 01 - 임의의 x, y 좌표를 이용하여 API에서 해당 위치 날씨 데이터를 받아 날씨정보DB에 저장하는 코드 작성
@@ -566,4 +566,8 @@
                                대신 이 API는 IP의 입력을 필요로 하기에 GET 요청을 보내는 컴퓨터의 IP를 가져오는 함수를 추가로 작성한 후 IP 입력.
                                그리고 로컬에서는 돌리기에 어려움이 있어 로컬에서는 이전 Google의 API를 사용하고 새로작성한 API 코드는 배포 시에만 사용.
                          +) 세번째 드롭다운 까지 값이 있을 때 지역 DB에서 x, y를 얻어내서 날씨 API에 접속하여 날씨 DB에 데이터를 저장하도록 작성.
-                         -) 날씨 API에 접근시에 로딩시간이 좀 길다. ( 나중에 보완할 예정 )
+                         -) 날씨 API에 접근시에 로딩시간이 좀 길다.
+                Day 05 - HTML, CSS, JAVASCRIPT 작성 및 DB에서 필요 데이터 추출 및 HTML과 연결
+                         +) 날씨 하늘상태 부분 PNG 이미지 파일로 시각화
+                         +) Pythonanywhere에 적용
+                         +) 프로그램 설계서 마무리
