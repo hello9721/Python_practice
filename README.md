@@ -571,3 +571,13 @@
                          +) 날씨 하늘상태 부분 PNG 이미지 파일로 시각화
                          +) Pythonanywhere에 적용
                          +) 프로그램 설계서 마무리
+                Day 06 - 발표자료 마무리 및 로직순서도 작성
+                
+
+  <details>
+<summary> Logic </summary>
+
+![all drawio](https://user-images.githubusercontent.com/95046369/208826755-fbb8c195-ca36-48f1-993d-287030aaa08a.png)
+
+</details>                     
+
