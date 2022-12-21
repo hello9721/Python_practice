@@ -539,7 +539,7 @@
 
 
 #
-#### 22/12/12 ~ 22/12/14 & 22/12/19 ~ 22/12/20 -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project) & [PythonAnywhere Page](http://hello9721.pythonanywhere.com/)
+#### 22/12/12 ~ 22/12/14 & 22/12/19 ~ 22/12/21 -> [프로젝트 레포지토리](https://github.com/hello9721/Python_Project) & [PythonAnywhere Page](http://hello9721.pythonanywhere.com/)
     MINI PROJECT - 날씨 정보 웹사이트 ( Django 활용 )
     
                 Day 01 - 임의의 x, y 좌표를 이용하여 API에서 해당 위치 날씨 데이터를 받아 날씨정보DB에 저장하는 코드 작성
@@ -571,3 +571,13 @@
                          +) 날씨 하늘상태 부분 PNG 이미지 파일로 시각화
                          +) Pythonanywhere에 적용
                          +) 프로그램 설계서 마무리
+                Day 06 - 발표자료 마무리 및 로직순서도 작성
+                
+
+  <details>
+<summary> Logic </summary>
+
+![all drawio](https://user-images.githubusercontent.com/95046369/208826755-fbb8c195-ca36-48f1-993d-287030aaa08a.png)
+
+</details>                     
+
