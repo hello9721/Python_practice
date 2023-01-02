@@ -581,3 +581,12 @@
 
 </details>                     
 
+#
+#### 22/12/26 ~ (월/화/수)
+    MINI PROJECT - 01 ~ 11월 전기 측정 데이터를 이용한 12월 데이터 예측 ( QT 로 UI 제작하여 표시 )
+    
+<summary> DAY 4 (23/01/02) </summary>
+
+![회의](https://user-images.githubusercontent.com/95046369/210207729-e0e17d37-d141-4a78-9b8c-f0e6b917e4d1.jpg)
+
+</details>
