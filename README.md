@@ -590,4 +590,9 @@
 
 ![회의](https://user-images.githubusercontent.com/95046369/210207729-e0e17d37-d141-4a78-9b8c-f0e6b917e4d1.jpg)
 
+- 완성된 UI 기본 틀
+    
+![기본틀](https://user-images.githubusercontent.com/95046369/210287194-888b3ecc-255a-4c2b-b382-12cd225263ba.png)
+
+
 </details>
