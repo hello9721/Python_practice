@@ -585,17 +585,4 @@
 #### 22/12/26 ~ (월/화/수)
     MAIN PROJECT - 01 ~ 11월 전기 측정 데이터를 이용한 12월 데이터 예측 ( QT 로 UI 제작하여 표시 )
     
-                Day 01 ~ 03 - 원본데이터를 DB화 시키고 서로 맡은 부분에 관하여 코드 비교
-                Day 04 - UI와 모델 훈련에 관하여 회의 후 팀 나누어 진행. UI 팀은 기본틀 까지 완성.
-    
-<details>    
-<summary> DAY 4 (23/01/02) </summary>
-
-![회의](https://user-images.githubusercontent.com/95046369/210207729-e0e17d37-d141-4a78-9b8c-f0e6b917e4d1.jpg)
-
-- 완성된 UI 기본 틀
-    
-![기본틀](https://user-images.githubusercontent.com/95046369/210287194-888b3ecc-255a-4c2b-b382-12cd225263ba.png)
-
-
-</details>
+                진행사항 MAIN PROJECT - DOCUMENTS 부분 참고
