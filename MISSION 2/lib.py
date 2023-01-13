@@ -9,7 +9,7 @@ import random as rn
 
 class summoner:
 
-    api_key = "RGAPI-72893791-2df1-4f8c-ae70-5b9556054381"
+    api_key = "RGAPI-d950e142-6b77-45b7-ab6c-9329410d1878"
     platform_url = "https://kr.api.riotgames.com/"
     region_url = "https://asia.api.riotgames.com/"
 
